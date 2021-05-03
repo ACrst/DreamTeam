@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background= "#8BC34A"
-    tools:context=".Page1">
+    tools:context=".Page2">
+
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="377dp"
         android:layout_height="157dp"
         android:fontFamily="@font/beachday"
@@ -21,36 +23,40 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.233" />
 
-    <Button
-        android:id="@+id/joinTeamButton"
-        android:layout_width="315dp"
-        android:layout_height="99dp"
-        android:background="#2196F3"
+    <EditText
+        android:id="@+id/roomPinTxt"
+        android:layout_width="344dp"
+        android:layout_height="121dp"
+        android:background="#549BD5"
+        android:ems="10"
         android:fontFamily="@font/beachday"
-        android:text="Join Team"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:hint="Enter a room pin..."
         android:textColor="#FFEB3B"
-        android:textSize="40sp"
+        android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.657" />
+        app:layout_constraintVertical_bias="0.447" />
 
     <Button
-        android:id="@+id/createTeamButton"
-        android:layout_width="317dp"
-        android:layout_height="99dp"
+        android:id="@+id/buttonJoin"
+        android:layout_width="213dp"
+        android:layout_height="76dp"
+        android:text="Join!"
         android:fontFamily="@font/beachday"
-        android:textSize="40sp"
-        android:text="CREATE TEAM"
+        android:textSize="30sp"
         android:textColor="#FFEB3B"
         android:background="#2196F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.444" />
+        app:layout_constraintVertical_bias="0.644" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
