@@ -17,32 +17,20 @@
         android:textColor="#E87224"
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-<<<<<<< HEAD
-        app:layout_constraintVertical_bias="0.233" />
-
-    <EditText
-        android:id="@+id/roomPinTxt"
-=======
         app:layout_constraintVertical_bias="0.092" />
-
 
     <EditText
         android:id="@+id/usernameTxt"
->>>>>>> a3252a2e70b5621daf91326db862ecd2afcbb3ec
         android:layout_width="344dp"
         android:layout_height="121dp"
         android:background="#549BD5"
         android:ems="10"
         android:fontFamily="@font/beachday"
         android:gravity="center"
-<<<<<<< HEAD
-        android:inputType="textPersonName"
-        android:hint="Enter a room pin..."
-=======
         android:hint="Enter your username"
         android:inputType="textPersonName"
         android:textColor="#FFEB3B"
@@ -52,7 +40,7 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.398" />
+        app:layout_constraintVertical_bias="0.344" />
 
     <EditText
         android:id="@+id/roomPinTxt"
@@ -64,7 +52,6 @@
         android:gravity="center"
         android:hint="Enter a room pin..."
         android:inputType="textPersonName"
->>>>>>> a3252a2e70b5621daf91326db862ecd2afcbb3ec
         android:textColor="#FFEB3B"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -72,40 +59,23 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-<<<<<<< HEAD
-        app:layout_constraintVertical_bias="0.447" />
-=======
-        app:layout_constraintVertical_bias="0.662" />
->>>>>>> a3252a2e70b5621daf91326db862ecd2afcbb3ec
+        app:layout_constraintVertical_bias="0.6" />
 
     <Button
         android:id="@+id/buttonJoin"
-        android:layout_width="213dp"
-        android:layout_height="76dp"
-<<<<<<< HEAD
-        android:text="Join!"
-        android:fontFamily="@font/beachday"
-        android:textSize="30sp"
-        android:textColor="#FFEB3B"
-        android:background="#2196F3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.575"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.644" />
-=======
+        android:layout_width="238dp"
+        android:layout_height="84dp"
         android:background="#2196F3"
         android:fontFamily="@font/beachday"
         android:text="Join!"
         android:textColor="#FFEB3B"
-        android:textSize="30sp"
+        android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.848" />
->>>>>>> a3252a2e70b5621daf91326db862ecd2afcbb3ec
+        app:layout_constraintVertical_bias="0.831" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
