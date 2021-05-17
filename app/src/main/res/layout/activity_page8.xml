@@ -2,58 +2,54 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8BC34A"
-    tools:context=".Page7">
-
+    android:background= "#8BC34A"
+    tools:context=".Page8">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="377dp"
+        android:layout_height="157dp"
         android:fontFamily="@font/beachday"
         android:text="DreamTeam"
         android:textColor="#E87224"
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.086" />
+        app:layout_constraintVertical_bias="0.092" />
 
     <TextView
-        android:id="@+id/textView_finalHost_message"
-        android:layout_width="378dp"
-        android:layout_height="384dp"
+        android:id="@+id/textViewFinalTeams"
+        android:layout_width="385dp"
+        android:layout_height="82dp"
         android:fontFamily="@font/beachday"
-        android:gravity="center"
-        android:text="Names of team members will come up as they join.."
+        android:text="The final Dream Teams"
         android:textColor="#FFEB3B"
-        android:textSize="50sp"
+        android:textSize="35sp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.452" />
+        app:layout_constraintVertical_bias="0.197" />
 
-    <Button
-        android:id="@+id/buttonDreamTeamify"
-        android:layout_width="228dp"
-        android:layout_height="114dp"
-        android:background="#2196F3"
+    <MultiAutoCompleteTextView
+        android:id="@+id/FinalTeamBreakdown"
+        android:layout_width="306dp"
+        android:layout_height="438dp"
         android:fontFamily="@font/beachday"
-        android:text="Generate Dream Teams!"
-        android:gravity="center"
-        android:textColor="#FFEB3B"
-        android:textSize="30sp"
+        android:text="Holds final teams"
+        android:textColor="#2196F3"
+        android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.909" />
+        app:layout_constraintVertical_bias="0.866" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,22 +17,27 @@
         android:textColor="#E87224"
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.058" />
 
     <TextView
-        android:id="@+id/textView_team_dashboard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Team Dashboard"
+        android:id="@+id/textView_final_message"
+        android:layout_width="378dp"
+        android:layout_height="384dp"
+        android:fontFamily="@font/beachday"
+        android:text="Waiting for host to assign you into a group..."
+        android:gravity="center"
+        android:textColor="#FFEB3B"
+        android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.237" />
+        app:layout_constraintVertical_bias="0.44" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
