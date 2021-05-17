@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Page1 extends AppCompatActivity implements View.OnClickListener {
-
+    //Common Landing page for the app
     //Private Variables
     private Button joinTeamButton, createTeamButton;
 
@@ -34,7 +34,7 @@ public class Page1 extends AppCompatActivity implements View.OnClickListener {
         switch (view.getId()){
             //If the User clicks on joinTeam, they are taken to page 2.
             case R.id.joinTeamButton:
-                startActivity(new Intent(this, Page2.class));
+                startActivity(new Intent(this, PageU1.class));
                 break;
 
             case R.id.createTeamButton:

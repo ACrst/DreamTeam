@@ -1,6 +1,6 @@
 package com.example.dreamteam;
 
-public class Page7 {
+public class PageH4 {
 
     //Host View Page
     //ROUGH ROUGH ROUGH ALGORITHM.

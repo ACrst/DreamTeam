@@ -7,11 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Page3 extends AppCompatActivity {
-
+public class PageH1 extends AppCompatActivity {
+    //Host Page1
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page3);
+        setContentView(R.layout.page_h1);
     }
 }
