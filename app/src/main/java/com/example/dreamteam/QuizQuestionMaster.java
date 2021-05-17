@@ -1,51 +1,59 @@
 package com.example.dreamteam;
-//We will have 3 questions - 4 options-4 teams
-public class QuizQuestionMaster {
-    public int questionid; //maps to the 4 teams that the user specifies
-    public String question;
-    public String option1;
-    public String option2;
-    public String option3;
-    public String option4;
+/*This class contains the question object, it has the questionId and the its multiple choice options stored in it.
+* the Options are objects -see Option class- that hold the option information.
+ */
 
-    public QuizQuestionMaster(int qid,String quest, String opt1, String opt2, String opt3,String opt4)
+public class QuizQuestionMaster {
+    //This is the number of the question- that is 1,2,3,4
+    private int questionID;
+    private String questionText;
+    private Option option1;
+    private Option option2;
+    private Option option3;
+    private Option option4;
+
+    public QuizQuestionMaster(int qid, String quest, Option opt1, Option opt2, Option opt3,Option opt4)
     {
-        questionid=qid;
-        question=quest;
+        questionID = qid;
+        questionText =quest;
         option1=opt1;
         option2=opt2;
         option3=opt3;
         option4=opt4;
     }
 
-    public int getQuestionid() {
-        return questionid;
-    }
-
-    public void setQuestionid(int questionid) {
-        this.questionid = questionid;
-    }
-
-    public String getQuestion() {
-        return question;
+    //SETTERS
+    public void setQuestioID(int questionId) {
+        this.questionID = questionId;
     }
 
     public void setQuestion(String question) {
-        this.question = question;
+        this.questionText = question;
     }
 
-    public String getOption1() {
+    // GETTERS
+    public int getQuestionID() {
+        return questionID;
+    }
+
+    public String getQuestion() {
+        return questionText;
+    }
+
+    public Option getOption1() {
         return option1;
     }
 
-    public String getOption2() {
+    public Option  getOption2() {
         return option2;
     }
 
-    public String getOption3() {
+    public Option  getOption3() {
         return option3;
     }
 
-    public String getOption4() { return option4;}
+    public Option  getOption4() {
+        return option4;
+    }
 
 }
