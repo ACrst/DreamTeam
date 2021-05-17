@@ -17,11 +17,11 @@
         android:textColor="#E87224"
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.259" />
+        app:layout_constraintVertical_bias="0.221" />
 
     <EditText
         android:id="@+id/usernameTxt"
@@ -30,17 +30,17 @@
         android:background="#549BD5"
         android:ems="10"
         android:fontFamily="@font/beachday"
-        android:textColor="#FFEB3B"
         android:gravity="center"
         android:hint="Enter your username..."
         android:inputType="textPersonName"
+        android:textColor="#FFEB3B"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.514" />
+        app:layout_constraintVertical_bias="0.465" />
 
     <Button
         android:id="@+id/buttonGeneratePin"

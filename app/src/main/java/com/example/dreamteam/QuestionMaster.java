@@ -3,8 +3,8 @@ package com.example.dreamteam;
 * the Options are objects -see Option class- that hold the option information.
  */
 
-public class QuizQuestionMaster {
-    //This is the number of the question- that is 1,2,3,4
+public class QuestionMaster {
+    //This is the number of the question- that is 1,2,3
     private int questionID;
     private String questionText;
     private Option option1;
@@ -12,7 +12,7 @@ public class QuizQuestionMaster {
     private Option option3;
     private Option option4;
 
-    public QuizQuestionMaster(int qid, String quest, Option opt1, Option opt2, Option opt3,Option opt4)
+    public QuestionMaster(int qid, String quest, Option opt1, Option opt2, Option opt3, Option opt4)
     {
         questionID = qid;
         questionText =quest;

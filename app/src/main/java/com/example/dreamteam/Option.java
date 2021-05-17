@@ -12,7 +12,6 @@ public class Option {
     private int optionID; //Can only be 1,2,3,4 that respectively map to a), b), c), d)
     private int mappingID; //maps the answer specified by the user to the option
 
-
     //Getters
     public String getOption(){
         return optionText;

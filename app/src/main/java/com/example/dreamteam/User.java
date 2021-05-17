@@ -2,7 +2,7 @@ package com.example.dreamteam;
 
 public class User {
     private String userName;
-    private int subTeam; //The subTeam that they belong to
+    private int subTeamID; //The subTeam that they belong to, that is the teamId of the team of the team they belong to. Can only be 1,2,3,4
     private int question1Answer; //This will hold the id of the option they chose for each q.(It is the optionID of the option they choose)
     private int question2Answer;
     private int question3Answer;
@@ -27,6 +27,8 @@ public class User {
         return question3Answer;
     }
 
+    public int getSubTeamID() {return subTeamID;}
+
     //Setters
     public void setUserName(String uname){
         //check that is unique
@@ -43,5 +45,6 @@ public class User {
     public void setAnswer3(int ans){
         this.question3Answer = ans;
     }
+    public void setSubTeamID(int id){ this.subTeamID = id; }
 
 }
