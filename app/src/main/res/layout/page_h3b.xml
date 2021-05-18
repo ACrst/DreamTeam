@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout2"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8BC34A"
+    tools:context=".PageH3b">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/beachday"
+        android:text="DreamTeam"
+        android:textColor="#E87224"
+        android:textSize="80sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <RadioGroup
+        android:id="@+id/radiogroup1"
+        android:layout_width="233dp"
+        android:layout_height="135dp"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.291">
+
+        <RadioButton
+            android:id="@+id/rb11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option1"
+            android:textSize="30sp" />
+
+        <RadioButton
+            android:id="@+id/rb12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option2"
+            android:textSize="30sp" />
+
+        <RadioButton
+            android:id="@+id/rb13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option3"
+            android:textSize="30sp" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radiogroup2"
+        android:layout_width="233dp"
+        android:layout_height="135dp"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.575">
+
+        <RadioButton
+            android:id="@+id/rb21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option1"
+            android:textSize="30sp" />
+
+        <RadioButton
+            android:id="@+id/rb22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option2"
+            android:textSize="30sp" />
+
+        <RadioButton
+            android:id="@+id/rb23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option3"
+            android:textSize="30sp" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radiogroup3"
+        android:layout_width="233dp"
+        android:layout_height="135dp"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.885">
+        <RadioButton
+            android:id="@+id/rb31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option1"
+            android:textSize="30sp" />
+
+        <RadioButton
+            android:id="@+id/rb32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option2"
+            android:textSize="30sp" />
+
+        <RadioButton
+            android:id="@+id/rb33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option3"
+            android:textSize="30sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/design_questions_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Design Questions"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

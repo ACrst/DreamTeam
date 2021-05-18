@@ -38,7 +38,7 @@ public class Page1 extends AppCompatActivity implements View.OnClickListener {
                 break;
 
             case R.id.createTeamButton:
-                //startActivity(new Intent(this, Page5.class));
+                startActivity(new Intent(this, PageH1.class));
                 break;
         }
     }
