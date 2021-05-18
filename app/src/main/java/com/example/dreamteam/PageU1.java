@@ -6,6 +6,7 @@ package com.example.dreamteam;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +31,7 @@ public class PageU1 extends AppCompatActivity {
             //When the user clicks on the Join button
                 //1) validate the room key and make sure it is valid, if not set error message
                 //2) take them to page 4, a confirmation page showing that they are admitted to a room.
-                //startActivity(new Intent(this, Page3.class));
+                startActivity(new Intent(PageU1.this, PageU2a.class));
             }
         });
     }

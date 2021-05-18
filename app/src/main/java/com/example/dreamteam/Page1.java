@@ -25,6 +25,7 @@ public class Page1 extends AppCompatActivity implements View.OnClickListener {
         joinTeamButton = (Button) findViewById(R.id.joinTeamButton);
         joinTeamButton.setOnClickListener(this);
         createTeamButton = (Button) findViewById(R.id.createTeamButton);
+        createTeamButton.setOnClickListener(this);
 
 
 
@@ -41,7 +42,6 @@ public class Page1 extends AppCompatActivity implements View.OnClickListener {
 
             case R.id.createTeamButton:
                 Toast.makeText(Page1.this,"Create Team button clicked",Toast.LENGTH_SHORT).show();
-
                 startActivity(new Intent(this, PageH1.class));
                 break;
         }

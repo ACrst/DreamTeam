@@ -88,7 +88,7 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/submit_answers_button"
+        android:id="@+id/submitQ1"
         android:layout_width="170dp"
         android:layout_height="66dp"
         android:background="#2196F3"
