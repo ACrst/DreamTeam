@@ -9,14 +9,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
 
 public class PageH1 extends AppCompatActivity {
     //Host Page1 to generate RoomPin
-    public EditText hostname;
-    public Button generate_roompin_button;
+    private EditText hostname;
+    private Button generate_roompin_button;
+    private TextView roompin_text_generated;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +27,7 @@ public class PageH1 extends AppCompatActivity {
 
         hostname=(EditText)findViewById(R.id.usernameTxt);
         generate_roompin_button=(Button)findViewById(R.id.buttonGeneratePin);
+        roompin_text_generated=(TextView)findViewById(R.id.textView_currentroompin);
 
         generate_roompin_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +46,9 @@ public class PageH1 extends AppCompatActivity {
                 }
                 String roompin=sb.toString();
                 Toast.makeText(PageH1.this,roompin,Toast.LENGTH_SHORT).show();
+                roompin_text_generated.setText(roompin);
+
+                //add Hostname, RoomPin to current hostobject
             }
         });
     }
