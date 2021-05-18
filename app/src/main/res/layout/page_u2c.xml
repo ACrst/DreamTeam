@@ -8,6 +8,7 @@
     android:background="#8BC34A"
     tools:context=".PageU2a">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -23,131 +24,86 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.024" />
 
-    <TextView
-        android:id="@+id/textView_loggedinscreenmessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Congratulations! You have successfully logged in!!!!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.167" />
-
-    <RadioGroup
-        android:id="@+id/radiogroup1"
-        android:layout_width="233dp"
-        android:layout_height="135dp"
-        android:layout_centerInParent="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.252"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.291">
-
-        <RadioButton
-            android:id="@+id/rb11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option1"
-            android:textSize="30sp" />
-
-        <RadioButton
-            android:id="@+id/rb12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option2"
-            android:textSize="30sp" />
-
-        <RadioButton
-            android:id="@+id/rb13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option3"
-            android:textSize="30sp" />
-
-    </RadioGroup>
-
-    <RadioGroup
-        android:id="@+id/radiogroup2"
-        android:layout_width="233dp"
-        android:layout_height="135dp"
-        android:layout_centerInParent="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.252"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.575">
-
-        <RadioButton
-            android:id="@+id/rb21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option1"
-            android:textSize="30sp" />
-
-        <RadioButton
-            android:id="@+id/rb22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option2"
-            android:textSize="30sp" />
-
-        <RadioButton
-            android:id="@+id/rb23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option3"
-            android:textSize="30sp" />
-    </RadioGroup>
 
     <RadioGroup
         android:id="@+id/radiogroup3"
-        android:layout_width="233dp"
-        android:layout_height="135dp"
+        android:layout_width="319dp"
+        android:layout_height="311dp"
         android:layout_centerInParent="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintHorizontal_bias="0.358"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.885">
+        app:layout_constraintVertical_bias="0.75">
+
         <RadioButton
             android:id="@+id/rb31"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option1"
+            android:layout_width="175dp"
+            android:layout_height="59dp"
+            android:fontFamily="@font/beachday"
+            android:text="Option 1"
+            android:textColor="#FFEB3B"
             android:textSize="30sp" />
 
         <RadioButton
             android:id="@+id/rb32"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option2"
+            android:layout_width="175dp"
+            android:layout_height="59dp"
+            android:fontFamily="@font/beachday"
+            android:text="Option 2"
+            android:textColor="#FFEB3B"
             android:textSize="30sp" />
 
         <RadioButton
             android:id="@+id/rb33"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option3"
+            android:layout_width="175dp"
+            android:layout_height="59dp"
+            android:fontFamily="@font/beachday"
+            android:text="Option 3"
+            android:textColor="#FFEB3B"
             android:textSize="30sp" />
+
+        <RadioButton
+            android:id="@+id/rb34"
+            android:layout_width="175dp"
+            android:layout_height="59dp"
+            android:fontFamily="@font/beachday"
+            android:text="Option 4"
+            android:textColor="#FFEB3B"
+            android:textSize="30sp" />
+
     </RadioGroup>
 
     <Button
         android:id="@+id/submit_answers_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="186dp"
+        android:layout_height="75dp"
+        android:background="#2196F3"
+        android:fontFamily="@font/beachday"
         android:text="Submit"
+        android:textColor="#FFEB3B"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.537"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.932" />
 
+    <TextView
+        android:id="@+id/QuestionU3"
+        android:layout_width="355dp"
+        android:layout_height="152dp"
+        android:background="#549BD5"
+        android:fontFamily="@font/beachday"
+        android:text="Question displayed here"
+        android:textColor="#FFEB3B"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.208" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

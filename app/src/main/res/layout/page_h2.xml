@@ -26,73 +26,86 @@
 
     <TextView
         android:id="@+id/textView_teamname_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:textColor="#FFEB3B"
+        android:layout_width="381dp"
+        android:layout_height="87dp"
+        android:fontFamily="@font/beachday"
         android:text="Enter the four team names you wish to create as a host."
+        android:textSize="25sp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.212" />
+        app:layout_constraintVertical_bias="0.189" />
 
     <EditText
         android:id="@+id/editText_team1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:textColor="#FFEB3B"
+        android:layout_width="297dp"
+        android:layout_height="52dp"
+        android:fontFamily="@font/beachday"
         android:hint="Team 1 Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.337" />
+        app:layout_constraintVertical_bias="0.338" />
 
     <EditText
         android:id="@+id/editText_team2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:textColor="#FFEB3B"
+        android:layout_width="297dp"
+        android:layout_height="52dp"
+        android:fontFamily="@font/beachday"
         android:hint="Team 2 Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.425" />
+        app:layout_constraintVertical_bias="0.437" />
 
     <EditText
         android:id="@+id/editText_team3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:textColor="#FFEB3B"
+        android:layout_width="297dp"
+        android:layout_height="52dp"
+        android:fontFamily="@font/beachday"
         android:hint="Team 3 Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.544" />
 
     <EditText
         android:id="@+id/editText_team4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:textColor="#FFEB3B"
+        android:layout_width="297dp"
+        android:layout_height="52dp"
+        android:fontFamily="@font/beachday"
         android:hint="Team 4 Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.587" />
+        app:layout_constraintVertical_bias="0.656" />
 
     <Button
         android:id="@+id/button_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="181dp"
+        android:layout_height="85dp"
+        android:textColor="#FFEB3B"
+        android:background="#2196F3"
+        android:fontFamily="@font/beachday"
         android:text="SAVE"
+        android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.749" />
+        app:layout_constraintVertical_bias="0.837" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
