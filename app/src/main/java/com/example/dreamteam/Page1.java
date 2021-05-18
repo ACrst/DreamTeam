@@ -10,11 +10,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Page1 extends AppCompatActivity implements View.OnClickListener {
     //Common Landing page for the app
     //Private Variables
-    private Button joinTeamButton, createTeamButton;
+    public Button joinTeamButton, createTeamButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +35,13 @@ public class Page1 extends AppCompatActivity implements View.OnClickListener {
         switch (view.getId()){
             //If the User clicks on joinTeam, they are taken to page 2.
             case R.id.joinTeamButton:
+                Toast.makeText(Page1.this,"Join Team button clicked",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, PageU1.class));
                 break;
 
             case R.id.createTeamButton:
+                Toast.makeText(Page1.this,"Create Team button clicked",Toast.LENGTH_SHORT).show();
+
                 startActivity(new Intent(this, PageH1.class));
                 break;
         }
