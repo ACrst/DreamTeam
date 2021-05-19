@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class Page1 extends AppCompatActivity implements View.OnClickListener {
     //Common Landing page for the app
     //Private Variables
-    public Button joinTeamButton, createTeamButton;
+    Button joinTeamButton, createTeamButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,6 @@ public class Page1 extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        Log.e("FIREBASE", "Hwlllllll");
         switch (view.getId()){
             //If the User clicks on joinTeam, they are taken to page 2.
             case R.id.joinTeamButton:

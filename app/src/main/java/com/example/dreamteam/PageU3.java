@@ -1,6 +1,8 @@
 package com.example.dreamteam;
 
-public class PageU3 {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class PageU3 extends AppCompatActivity {
 
     //Team View Page
 }

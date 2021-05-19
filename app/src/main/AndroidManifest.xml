@@ -9,14 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DreamTeam">
-        <activity android:name=".PageH5"></activity>
         <activity android:name=".Page1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PageH1"></activity>
+        <activity android:name=".PageH2"></activity>
+        <activity android:name=".PageH3a"></activity>
+        <activity android:name=".PageH3b"></activity>
+        <activity android:name=".PageH3c"></activity>
+        <activity android:name=".PageH4"></activity>
+        <activity android:name=".PageH5"></activity>
+        <activity android:name=".PageU1"></activity>
+        <activity android:name=".PageU2a"></activity>
+        <activity android:name=".PageU2b"></activity>
+        <activity android:name=".PageU2c"></activity>
+        <activity android:name=".PageU3"></activity>
     </application>
 
 </manifest>
