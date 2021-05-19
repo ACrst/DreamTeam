@@ -13,18 +13,63 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 //page : Host enters Question1
 public class PageH3a extends AppCompatActivity {
     private Button q1Button;
-    private EditText opA,opB,opC,opD;
-    private Spinner ansA,ansB,ansC,ansD;
+    private EditText opA,opB,opC,opD, q1;
+    private String optionA, optionB, optionC, optionD, q1String, optAMapID, optBMapID, optCMapID, optDMapID;
+    private Spinner optASpin,optBSpin, optCSpin, optDSpin;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         Intent intent=getIntent();
+
+        //Validate Views
+        q1 = (EditText) findViewById(R.id.question1);
+        opA = (EditText) findViewById(R.id.optA);
+        opB = (EditText) findViewById(R.id.optB);
+        opC = (EditText) findViewById(R.id.optC);
+        opD = (EditText) findViewById(R.id.optD);
+        optASpin =(Spinner)findViewById(R.id.spinnerOptA);
+        optBSpin =(Spinner)findViewById(R.id.spinnerOptB);
+        optCSpin =(Spinner)findViewById(R.id.spinnerOptC);
+        optDSpin =(Spinner)findViewById(R.id.spinnerOptD);
         q1Button = (Button) findViewById(R.id.q1Button);
+
+        //Populate Spinners
+        PageH1.teamMaster.populateSpinnerArray();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                this, android.R.layout.simple_spinner_item, PageH1.teamMaster.spinnerArray);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        optASpin.setAdapter(adapter);
+        optBSpin.setAdapter(adapter);
+        optCSpin.setAdapter(adapter);
+        optDSpin.setAdapter(adapter);
+
+        //Extract strings from Views
+        q1String = q1.getText().toString();
+        optionA = opA.getText().toString();
+        optionB = opB.getText().toString();
+        optionC = opC.getText().toString();
+        optionD = opD.getText().toString();
+
+        //Extract the choice form Spinners
+        optAMapID = optASpin.getSelectedItem().toString();
+        optBMapID = optBSpin.getSelectedItem().toString();
+        optCMapID = optCSpin.getSelectedItem().toString();
+        optDMapID = optDSpin.getSelectedItem().toString();
+
+        //Add the question and options, and mappingIDs into the Question Master Object
+        PageH1.teamMaster.question1.setQuestion(q1String);
+        PageH1.teamMaster.question1.option1.setOptionText(optionA);
+        PageH1.teamMaster.question1.option2.setOptionText(optionB);
+        PageH1.teamMaster.question1.option3.setOptionText(optionC);
+        PageH1.teamMaster.question1.option4.setOptionText(optionD);
+        //PageH1.teamMaster.question1.option1.setMappindID();
+
+        //Jump to next activity
         q1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,10 +79,7 @@ public class PageH3a extends AppCompatActivity {
             }
         });
 
-        ansA=(Spinner)findViewById(R.id.spinnerOptA);
-        ansB=(Spinner)findViewById(R.id.spinnerOptB);
-        ansC=(Spinner)findViewById(R.id.spinnerOptC);
-        ansD=(Spinner)findViewById(R.id.spinnerOptD);
+
 
     }
 }

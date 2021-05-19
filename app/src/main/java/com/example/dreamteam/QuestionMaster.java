@@ -7,23 +7,21 @@ public class QuestionMaster {
     //This is the number of the question- that is 1,2,3
     private int questionID;
     private String questionText;
-    private Option option1;
-    private Option option2;
-    private Option option3;
-    private Option option4;
+    Option option1;
+    Option option2;
+    Option option3;
+    Option option4;
 
-    public QuestionMaster(int qid, String quest, Option opt1, Option opt2, Option opt3, Option opt4)
+    public QuestionMaster()
     {
-        questionID = qid;
-        questionText =quest;
-        option1=opt1;
-        option2=opt2;
-        option3=opt3;
-        option4=opt4;
+        option1.setOptionID(1);
+        option2.setOptionID(2);
+        option3.setOptionID(3);
+        option4.setOptionID(4);
     }
 
     //SETTERS
-    public void setQuestioID(int questionId) {
+    public void setQuestionID(int questionId) {
         this.questionID = questionId;
     }
 
@@ -38,22 +36,6 @@ public class QuestionMaster {
 
     public String getQuestion() {
         return questionText;
-    }
-
-    public Option getOption1() {
-        return option1;
-    }
-
-    public Option  getOption2() {
-        return option2;
-    }
-
-    public Option  getOption3() {
-        return option3;
-    }
-
-    public Option  getOption4() {
-        return option4;
     }
 
 }
