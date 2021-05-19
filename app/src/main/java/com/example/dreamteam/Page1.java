@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class Page1 extends AppCompatActivity implements View.OnClickListener {
     //Common Landing page for the app
     //Private Variables
-    Button joinTeamButton, createTeamButton;
+    private Button joinTeamButton, createTeamButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,23 +27,43 @@ public class Page1 extends AppCompatActivity implements View.OnClickListener {
         createTeamButton = (Button) findViewById(R.id.createTeamButton);
         joinTeamButton.setOnClickListener(this);
         createTeamButton.setOnClickListener(this);
+
+        
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            //If the User clicks on joinTeam, they are taken to page 2.
-            case R.id.joinTeamButton:
-                Toast.makeText(Page1.this,"Join Team button clicked",Toast.LENGTH_SHORT).show();
-                Intent joinTeamIntent=new Intent(this, PageU1.class);
-                startActivity(joinTeamIntent);
-                break;
 
             case R.id.createTeamButton:
                 Toast.makeText(Page1.this,"Create Team button clicked",Toast.LENGTH_SHORT).show();
-                Intent createTeamIntent=new Intent(this, PageH1.class);
+                Intent createTeamIntent=new Intent(Page1.this, PageH1.class);
                 startActivity(createTeamIntent);
                 break;
+
+
+            case R.id.joinTeamButton:
+                Toast.makeText(Page1.this,"Join Team button clicked",Toast.LENGTH_SHORT).show();
+                Intent joinTeamIntent=new Intent(Page1.this, PageU1.class);
+                startActivity(joinTeamIntent);
+                break;
+
+
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

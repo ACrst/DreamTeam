@@ -22,6 +22,7 @@ public class PageU1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_u1);
 
+        Intent receiveIntent=getIntent();
         roomPin = (EditText) findViewById(R.id.roomPinTxt);
         joinButton = (Button) findViewById(R.id.buttonJoin);
 
