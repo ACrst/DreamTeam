@@ -41,32 +41,21 @@ public class PageH2 extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Toast.makeText(PageH2.this,"Save button clicked",Toast.LENGTH_SHORT).show();
+                //Make sure no fields are left null
+                while (team1Name == null && team1Name == null && team1Name == null && team1Name == null){
+                    Toast.makeText(PageH2.this,"Please enter all 4 team names",Toast.LENGTH_SHORT).show();
+                }
+
                 //Add the new team names to the subTeam objects within Team Master
                 PageH1.teamMaster.team1.setTeamName(team1Name);
                 PageH1.teamMaster.team2.setTeamName(team2Name);
                 PageH1.teamMaster.team3.setTeamName(team3Name);
                 PageH1.teamMaster.team4.setTeamName(team4Name);
 
-                Toast.makeText(PageH2.this,"Save button clicked",Toast.LENGTH_SHORT).show();
-
-                //Make sure no fields are left null
-                while (team1Name == null && team1Name == null && team1Name == null && team1Name == null){
-                    Toast.makeText(PageH2.this,"Please enter all 4 team names",Toast.LENGTH_SHORT).show();
-                }
-                SubTeamMaster t1=new SubTeamMaster(1,team1Name);
-                SubTeamMaster t2=new SubTeamMaster(2,team2Name);
-                SubTeamMaster t3=new SubTeamMaster(3,team3Name);
-                SubTeamMaster t4=new SubTeamMaster(4,team4Name);
-                ArrayList<String> teamnamevalues=new ArrayList<>();
-                for(int i=1;i<=4;i++)
-                {
-                    teamnamevalues.add(team1Name);
-                    teamnamevalues.add(team2Name);
-                    teamnamevalues.add(team3Name);
-                    teamnamevalues.add(team4Name);
-                }
                 Intent h3aintent=new Intent(PageH2.this, PageH3a.class);
-                h3aintent.putExtra("teamnames",teamnamevalues);
+                //h3aintent.putExtra("teamnames",teamnamevalues);
                 // Jump to next page
                 startActivity(h3aintent);
             }

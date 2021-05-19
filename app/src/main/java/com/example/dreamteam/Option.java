@@ -7,6 +7,8 @@ package com.example.dreamteam;
 * Eg: In a game of city based trivia, The option "a) I love the Chicago Bulls" maps to a "Team 1:The Chicago Team"
  */
 
+import android.widget.Toast;
+
 public class Option {
     private String optionText; //content of the option
     private int optionID; //Can only be 1,2,3,4 that respectively map to a), b), c), d)
@@ -26,8 +28,13 @@ public class Option {
     }
 
     //Setters
-    public void setOption(String option){
-        this.optionText = option;
+    public void setOptionText(String option){
+        if (option == null){
+            //Toast.makeText(Option.this, "You must enter a valid string", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            this.optionText = option;
+        }
     }
 
     public void setOptionID(int optID){
