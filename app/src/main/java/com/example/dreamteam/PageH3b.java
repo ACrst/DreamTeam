@@ -56,6 +56,12 @@ public class PageH3b extends AppCompatActivity {
         optCMapID = optCSpin.getSelectedItem().toString();
         optDMapID = optDSpin.getSelectedItem().toString();
 
+        //Add the spinner mapping IDs into the options.
+        PageH1.teamMaster.findMappedIDOption(optAMapID,PageH1.teamMaster.question2, 1);
+        PageH1.teamMaster.findMappedIDOption(optBMapID,PageH1.teamMaster.question2, 2);
+        PageH1.teamMaster.findMappedIDOption(optCMapID,PageH1.teamMaster.question2, 3);
+        PageH1.teamMaster.findMappedIDOption(optDMapID,PageH1.teamMaster.question2, 4);
+
         //Add the question and options, and mappingIDs into the Question Master Object
         PageH1.teamMaster.question2.setQuestion(q2String);
         PageH1.teamMaster.question2.option1.setOptionText(optionA);

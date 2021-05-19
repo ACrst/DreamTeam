@@ -52,6 +52,57 @@ public class TeamMaster {
         spinnerArray.add(team4.getTeamName());
     }
 
+    public void findMappedIDOption(String aTeamName, QuestionMaster theQuestion, int optID){
+        if (optID == 1) {
+            if (aTeamName.equals(team1.getTeamName())) {
+                theQuestion.option1.setMappindID(1);
+            } else if (aTeamName.equals(team2.getTeamName())) {
+                theQuestion.option1.setMappindID(2);
+            } else if (aTeamName.equals(team3.getTeamName())) {
+                theQuestion.option1.setMappindID(3);
+            } else if (aTeamName.equals(team4.getTeamName())) {
+                theQuestion.option1.setMappindID(4);
+            }
+        }
+
+        else if(optID == 2){
+            if (aTeamName.equals(team1.getTeamName())) {
+                theQuestion.option2.setMappindID(1);
+            } else if (aTeamName.equals(team2.getTeamName())) {
+                theQuestion.option2.setMappindID(2);
+            } else if (aTeamName.equals(team3.getTeamName())) {
+                theQuestion.option2.setMappindID(3);
+            } else if (aTeamName.equals(team4.getTeamName())) {
+                theQuestion.option2.setMappindID(4);
+            }
+        }
+
+        else if(optID == 3){
+            if (aTeamName.equals(team1.getTeamName())) {
+                theQuestion.option3.setMappindID(1);
+            } else if (aTeamName.equals(team2.getTeamName())) {
+                theQuestion.option3.setMappindID(2);
+            } else if (aTeamName.equals(team3.getTeamName())) {
+                theQuestion.option3.setMappindID(3);
+            } else if (aTeamName.equals(team4.getTeamName())) {
+                theQuestion.option3.setMappindID(4);
+            }
+        }
+
+        else if(optID == 4){
+            if (aTeamName.equals(team1.getTeamName())) {
+                theQuestion.option4.setMappindID(1);
+            } else if (aTeamName.equals(team2.getTeamName())) {
+                theQuestion.option4.setMappindID(2);
+            } else if (aTeamName.equals(team3.getTeamName())) {
+                theQuestion.option4.setMappindID(3);
+            } else if (aTeamName.equals(team4.getTeamName())) {
+                theQuestion.option4.setMappindID(4);
+            }
+        }
+    }
+
+
     public void setHostName(String uname){
         if (uname.length() > 15 || uname.length() < 3 ){
            //Toast.makeText(TeamMaster.this, "User Name must be between 3 and 15 characters", Toast.LENGTH_SHORT).show();
