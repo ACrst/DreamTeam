@@ -12,6 +12,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
+
+import java.util.HashMap;
 import java.util.Random;
 
 public class PageH1 extends AppCompatActivity {
@@ -19,6 +24,8 @@ public class PageH1 extends AppCompatActivity {
     private EditText hostname;
     private Button generate_roompin_button;
     private TextView roompin_text_generated;
+    private FirebaseDatabase db=FirebaseDatabase.getInstance();
+    private DatabaseReference root=db.getReference().child("users");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +56,17 @@ public class PageH1 extends AppCompatActivity {
                 roompin_text_generated.setText(roompin);
 
                 //add Hostname, RoomPin to current hostobject
+                String username=hostname.getText().toString();
+                Gson gson=new Gson();
+                root.setValue(username);
+                HashMap<String,String> usermap=new HashMap<>();
+                usermap.put("username",username);
+                usermap.put("roompin",roompin);
+
+                root.push().setValue(usermap); //creates a unique key along with the host object
+
+                //alternate json
+
             }
         });
     }

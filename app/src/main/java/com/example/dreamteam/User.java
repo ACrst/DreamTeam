@@ -1,5 +1,5 @@
 package com.example.dreamteam;
-
+//class to record User responses
 public class User {
     private String userName;
     private int subTeamID; //The subTeam that they belong to, that is the teamId of the team of the team they belong to. Can only be 1,2,3,4
