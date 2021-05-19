@@ -24,8 +24,8 @@ public class Page1 extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
 
         joinTeamButton = (Button) findViewById(R.id.joinTeamButton);
-        joinTeamButton.setOnClickListener(this);
         createTeamButton = (Button) findViewById(R.id.createTeamButton);
+        joinTeamButton.setOnClickListener(this);
         createTeamButton.setOnClickListener(this);
     }
 
@@ -36,12 +36,14 @@ public class Page1 extends AppCompatActivity implements View.OnClickListener {
             //If the User clicks on joinTeam, they are taken to page 2.
             case R.id.joinTeamButton:
                 Toast.makeText(Page1.this,"Join Team button clicked",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, PageU1.class));
+                Intent joinTeamIntent=new Intent(this, PageU1.class);
+                startActivity(joinTeamIntent);
                 break;
 
             case R.id.createTeamButton:
                 Toast.makeText(Page1.this,"Create Team button clicked",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, PageH1.class));
+                Intent createTeamIntent=new Intent(this, PageH1.class);
+                startActivity(createTeamIntent);
                 break;
         }
     }
