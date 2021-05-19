@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
 
 import java.util.HashMap;
 import java.util.Random;
@@ -57,7 +57,7 @@ public class PageH1 extends AppCompatActivity {
 
                 //add Hostname, RoomPin to current hostobject
                 String username=hostname.getText().toString();
-                Gson gson=new Gson();
+//                Gson gson=new Gson();
                 root.setValue(username);
                 HashMap<String,String> usermap=new HashMap<>();
                 usermap.put("username",username);
