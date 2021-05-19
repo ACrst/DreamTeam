@@ -75,7 +75,7 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/submit_answers_button"
+        android:id="@+id/submitQ2"
         android:layout_width="186dp"
         android:layout_height="75dp"
         android:background="#2196F3"
