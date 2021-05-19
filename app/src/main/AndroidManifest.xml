@@ -75,19 +75,22 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PageU2b">
+        <activity android:name=".PageU2b"
+            android:parentActivityName=".PageU2a">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.HOME" />
             </intent-filter>
         </activity>
-        <activity android:name=".PageU2c">
+        <activity android:name=".PageU2c"
+            android:parentActivityName=".PageU2b">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.HOME" />
             </intent-filter>
         </activity>
-        <activity android:name=".PageU3">
+        <activity android:name=".PageU3"
+            android:parentActivityName=".PageU2c">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.HOME" />

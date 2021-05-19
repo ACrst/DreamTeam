@@ -12,8 +12,10 @@ public class QuestionMaster {
     Option option3;
     Option option4;
 
-    public QuestionMaster()
+    public QuestionMaster(int quesid,String qtext)
     {
+        questionID=quesid;
+        questionText=qtext;
         option1.setOptionID(1);
         option2.setOptionID(2);
         option3.setOptionID(3);

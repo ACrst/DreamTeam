@@ -65,4 +65,27 @@ public class TeamMaster {
         roomPin = pin;
     }
 
+    public QuestionMaster getQuestion1() {
+        return question1;
+    }
+
+    public void setQuestion1(QuestionMaster question1) {
+        this.question1 = question1;
+    }
+
+    public QuestionMaster getQuestion2() {
+        return question2;
+    }
+
+    public void setQuestion2(QuestionMaster question2) {
+        this.question2 = question2;
+    }
+
+    public QuestionMaster getQuestion3() {
+        return question3;
+    }
+
+    public void setQuestion3(QuestionMaster question3) {
+        this.question3 = question3;
+    }
 }

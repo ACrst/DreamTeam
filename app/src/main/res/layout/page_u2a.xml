@@ -12,8 +12,8 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/beachday"
-        android:text="DreamTeam"
+        android:fontFamily="@font/dreamteamfonts"
+        android:text="@string/app_name"
         android:textColor="#E87224"
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -54,7 +54,6 @@
             android:layout_width="175dp"
             android:layout_height="59dp"
             android:fontFamily="@font/beachday"
-            android:text="Option 1"
             android:textColor="#FFEB3B"
             android:textSize="30sp" />
 
@@ -63,7 +62,6 @@
             android:layout_width="175dp"
             android:layout_height="59dp"
             android:fontFamily="@font/beachday"
-            android:text="Option 2"
             android:textColor="#FFEB3B"
             android:textSize="30sp" />
 
@@ -72,7 +70,6 @@
             android:layout_width="175dp"
             android:layout_height="59dp"
             android:fontFamily="@font/beachday"
-            android:text="Option 3"
             android:textColor="#FFEB3B"
             android:textSize="30sp" />
 
@@ -81,7 +78,6 @@
             android:layout_width="175dp"
             android:layout_height="59dp"
             android:fontFamily="@font/beachday"
-            android:text="Option 4"
             android:textColor="#FFEB3B"
             android:textSize="30sp" />
 

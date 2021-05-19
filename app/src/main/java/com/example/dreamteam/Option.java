@@ -10,10 +10,16 @@ package com.example.dreamteam;
 import android.widget.Toast;
 
 public class Option {
-    private String optionText; //content of the option
+
     private int optionID; //Can only be 1,2,3,4 that respectively map to a), b), c), d)
+    private String optionText; //content of the option
     private int mappingID; //maps the answer specified by the user to the option
 
+    public Option(int optID, String optText){
+        optionID=optID;
+        optionText=optText;
+
+    }
     //Getters
     public String getOption(){
         return optionText;
