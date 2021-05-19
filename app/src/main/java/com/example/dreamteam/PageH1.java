@@ -26,6 +26,7 @@ public class PageH1 extends AppCompatActivity {
     private TextView roompin_text_generated;
     private FirebaseDatabase db=FirebaseDatabase.getInstance();
     private DatabaseReference root=db.getReference().child("users");
+    public static TeamMaster teamMaster;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class PageH1 extends AppCompatActivity {
         generate_roompin_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //generate a random alphanumeric character
+                //generate a random alphanumeric character as the room pin
                 Random random=new Random();
                 int targetStringlength=6;
                 String alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
@@ -55,15 +56,21 @@ public class PageH1 extends AppCompatActivity {
                 Toast.makeText(PageH1.this,roompin,Toast.LENGTH_SHORT).show();
                 roompin_text_generated.setText(roompin);
 
-                //add Hostname, RoomPin to current hostobject
-                String username=hostname.getText().toString();
-//                Gson gson=new Gson();
-                root.setValue(username);
+                //Add Hostname to the Team Master Object
+                String hostUsername=hostname.getText().toString();
+                teamMaster.setHostName(hostUsername);
+
+                //Add roompin to Team Master Object
+                teamMaster.setRoomPin(roompin);
+
+                //Gson gson=new Gson();
+                /*
+                root.setValue(hostUsername);
                 HashMap<String,String> usermap=new HashMap<>();
-                usermap.put("username",username);
+                usermap.put("hostUsername",hostUsername);
                 usermap.put("roompin",roompin);
 
-                root.push().setValue(usermap); //creates a unique key along with the host object
+                root.push().setValue(usermap); //creates a unique key along with the host object*/
 
                 //alternate json
 

@@ -16,7 +16,7 @@ public class PageU2a extends AppCompatActivity {
     private Button submitQ1;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate( @Nullable  Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         submitQ1 = (Button) findViewById(R.id.submitQ1);
