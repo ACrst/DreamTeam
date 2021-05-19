@@ -7,10 +7,17 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+//import com.google.gson.Gson;
+
 //Host creates 4 team names and saves it after clicking SAVE button
 //Host Page 2
 public class PageH2 extends AppCompatActivity {
     private Button saveButton;
+    private FirebaseDatabase db=FirebaseDatabase.getInstance();
+    private DatabaseReference root=db.getReference().child("users");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

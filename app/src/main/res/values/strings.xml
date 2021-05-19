@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">DreamTeam</string>
+    <string name="username">Enter your UserName</string>
+    <string name="roompin_enter">Enter your Room PIN</string>
+    <string name="roompin_title">Room Pin</string>
+    <string name="generate_roompin">Generate Room Pin!</string>
+    <string name="createteambutton">Create Team</string>
+    <string name="jointeambutton">Join Team</string>
 </resources>

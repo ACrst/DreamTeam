@@ -5,6 +5,7 @@ package com.example.dreamteam;
  */
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,9 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-//import com.google.gson.Gson;
+
+
 
 import java.util.HashMap;
 import java.util.Random;
@@ -24,50 +24,56 @@ public class PageH1 extends AppCompatActivity {
     private EditText hostname;
     private Button generate_roompin_button;
     private TextView roompin_text_generated;
-    private FirebaseDatabase db=FirebaseDatabase.getInstance();
-    private DatabaseReference root=db.getReference().child("users");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_h1);
 
+        Intent receiveIntent=getIntent();
+
         hostname=(EditText)findViewById(R.id.usernameTxt);
         generate_roompin_button=(Button)findViewById(R.id.buttonGeneratePin);
-        roompin_text_generated=(TextView)findViewById(R.id.textView_currentroompin);
+        roompin_text_generated=(TextView)findViewById(R.id.textView_currentrpin);
 
-        generate_roompin_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //generate a random alphanumeric character
-                Random random=new Random();
-                int targetStringlength=6;
-                String alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-                StringBuilder sb=new StringBuilder();
 
-                for(int i=0;i<targetStringlength;i++)
-                {
-                    int index=random.nextInt(alphabet.length());
-                    char randomChar=alphabet.charAt(index);
-                    sb.append(randomChar);
-                }
-                String roompin=sb.toString();
-                Toast.makeText(PageH1.this,roompin,Toast.LENGTH_SHORT).show();
-                roompin_text_generated.setText(roompin);
+        Toast.makeText(PageH1.this,"Entering Page1",Toast.LENGTH_SHORT).show();
+//        Intent receiveIntent=getIntent();
+//        Bundle bundle=receiveIntent.getExtras();
 
-                //add Hostname, RoomPin to current hostobject
-                String username=hostname.getText().toString();
-//                Gson gson=new Gson();
-                root.setValue(username);
-                HashMap<String,String> usermap=new HashMap<>();
-                usermap.put("username",username);
-                usermap.put("roompin",roompin);
-
-                root.push().setValue(usermap); //creates a unique key along with the host object
-
-                //alternate json
-
-            }
-        });
+//        generate_roompin_button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //generate a random alphanumeric character
+//                Random random=new Random();
+//                int targetStringlength=6;
+//                String alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+//                StringBuilder sb=new StringBuilder();
+//
+//                for(int i=0;i<targetStringlength;i++)
+//                {
+//                    int index=random.nextInt(alphabet.length());
+//                    char randomChar=alphabet.charAt(index);
+//                    sb.append(randomChar);
+//                }
+//                String roompin=sb.toString();
+//                Toast.makeText(PageH1.this,roompin,Toast.LENGTH_SHORT).show();
+//                roompin_text_generated.setText(roompin);
+//
+//                //add Hostname, RoomPin to current hostobject
+//                String username=hostname.getText().toString();
+////                Gson gson=new Gson();
+////                root.setValue(username);
+////                HashMap<String,String> usermap=new HashMap<>();
+////                usermap.put("username",username);
+////                usermap.put("roompin",roompin);
+////
+////                root.push().setValue(usermap); //creates a unique key along with the host object
+//
+//                //alternate json
+//
+//            }
+//        });
     }
 }
