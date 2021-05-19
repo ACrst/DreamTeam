@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 //Host creates 4 team names and saves it after clicking SAVE button
 //Host Page 2
 
@@ -48,12 +50,25 @@ public class PageH2 extends AppCompatActivity {
                 Toast.makeText(PageH2.this,"Save button clicked",Toast.LENGTH_SHORT).show();
 
                 //Make sure no fields are left null
-                while (team1Name == null || team1Name == null || team1Name == null || team1Name == null){
+                while (team1Name == null && team1Name == null && team1Name == null && team1Name == null){
                     Toast.makeText(PageH2.this,"Please enter all 4 team names",Toast.LENGTH_SHORT).show();
                 }
-
+                SubTeamMaster t1=new SubTeamMaster(1,team1Name);
+                SubTeamMaster t2=new SubTeamMaster(2,team2Name);
+                SubTeamMaster t3=new SubTeamMaster(3,team3Name);
+                SubTeamMaster t4=new SubTeamMaster(4,team4Name);
+                ArrayList<String> teamnamevalues=new ArrayList<>();
+                for(int i=1;i<=4;i++)
+                {
+                    teamnamevalues.add(team1Name);
+                    teamnamevalues.add(team2Name);
+                    teamnamevalues.add(team3Name);
+                    teamnamevalues.add(team4Name);
+                }
+                Intent h3aintent=new Intent(PageH2.this, PageH3a.class);
+                h3aintent.putExtra("teamnames",teamnamevalues);
                 // Jump to next page
-                startActivity(new Intent(PageH2.this, PageH3a.class));
+                startActivity(h3aintent);
             }
         });
     }
