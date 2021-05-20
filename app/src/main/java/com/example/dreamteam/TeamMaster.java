@@ -13,7 +13,7 @@ public class TeamMaster {
     //userName of the Host
     private String host;
     //List of Users joining this Team
-    public User[] listOfUsers;
+    List<User> listOfUsers =  new ArrayList<User>();
     //These are the four sub teams.
     public SubTeamMaster team1;
     public  SubTeamMaster team2;

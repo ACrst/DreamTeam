@@ -21,6 +21,14 @@ public class SubTeamMaster {
         return teamName;
     }
 
+    public int getSubTeamSize(){return listOfSubUsers.size();}
+
+    public boolean isFull(int avgNumPeople){
+        if(listOfSubUsers.size() >= avgNumPeople){
+            return true;
+        }
+        return false;
+    }
     public void setTeamName(String teamName) {
         this.teamName = teamName;
     }
@@ -28,4 +36,6 @@ public class SubTeamMaster {
     public void addTeamMember(User aUser){
         listOfSubUsers.add(aUser);
     }
+
+
 }
