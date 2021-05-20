@@ -1,9 +1,9 @@
 package com.example.dreamteam;
 
-import java.io.Serializable;
+
 
 //class to record User responses
-public class User implements Serializable {
+public class User  {
     private String userName;
     private String roompin;
     private int subTeamID; //The subTeam that they belong to, that is the teamId of the team of the team they belong to. Can only be 1,2,3,4
