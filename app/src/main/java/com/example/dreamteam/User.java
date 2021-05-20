@@ -3,6 +3,7 @@ package com.example.dreamteam;
 public class User {
     private String userName;
     private float likelihoodScore;
+    private String roompin;
     private int subTeamID; //The subTeam that they belong to, that is the teamId of the team of the team they belong to. Can only be 1,2,3,4
     private Option question1Answer; //This will hold the id of the option they chose for each q.(It is the optionID of the option they choose)
     private Option question2Answer;
@@ -10,6 +11,14 @@ public class User {
 
     public User(String uname){
         this.userName = uname;
+    }
+
+    public String getRoompin() {
+        return roompin;
+    }
+
+    public void setRoompin(String roompin) {
+        this.roompin = roompin;
     }
 
     //Getters
