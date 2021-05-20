@@ -1,42 +1,30 @@
 package com.example.dreamteam;
-
-
-
 //class to record User responses
-public class User  {
+public class User {
     private String userName;
-    private String roompin;
+    private float likelihoodScore;
     private int subTeamID; //The subTeam that they belong to, that is the teamId of the team of the team they belong to. Can only be 1,2,3,4
-    private int question1Answer; //This will hold the id of the option they chose for each q.(It is the optionID of the option they choose)
-    private int question2Answer;
-    private int question3Answer;
+    private Option question1Answer; //This will hold the id of the option they chose for each q.(It is the optionID of the option they choose)
+    private Option question2Answer;
+    private Option question3Answer;
 
-    public User(String uname,String rpin){
+    public User(String uname){
         this.userName = uname;
-        this.roompin=rpin;
-    }
-
-    public String getRoompin() {
-        return roompin;
-    }
-
-    public void setRoompin(String roompin) {
-        this.roompin = roompin;
     }
 
     //Getters
     public String getUserName(){
         return userName;
     }
-    public int getAnswer1(){
+    public Option getAnswer1(){
         return question1Answer;
     }
 
-    public int getAnswer2(){
+    public Option getAnswer2(){
         return question2Answer;
     }
 
-    public int getAnswer3(){
+    public Option getAnswer3(){
         return question3Answer;
     }
 
@@ -48,16 +36,26 @@ public class User  {
         //check that is max 20 characters
         this.userName = uname;
     }
-
-    public void setAnswer1(int ans){
+    public void setAnswer1(Option ans){
         this.question1Answer = ans;
     }
-    public void setAnswer2(int ans){
+    public void setAnswer2(Option ans){
         this.question2Answer = ans;
     }
-    public void setAnswer3(int ans){
+    public void setAnswer3(Option ans){
         this.question3Answer = ans;
     }
+    public void setLikelihoodScore(int score) {this.likelihoodScore = score; }
     public void setSubTeamID(int id){ this.subTeamID = id; }
+
+    //Getter
+    public  float getLikelihoodScore(){return this.likelihoodScore; }
+    public void approximateUserTeam(){
+        float avg = 0;
+        avg += question1Answer.getMappingID();
+        avg += question2Answer.getMappingID();
+        avg += question3Answer.getMappingID();
+        likelihoodScore = avg/4;
+    }
 
 }

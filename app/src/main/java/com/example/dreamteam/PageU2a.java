@@ -17,7 +17,7 @@ public class PageU2a extends AppCompatActivity {
     private TextView question1;
     private Button submitQ1;
     private RadioButton rb1,rb2,rb3,rb4;
-    int selectedOption;
+    Option selectedOption;
     public static final String User_Name="com.example.dreamteam.User_Name";
     @Override
     protected void onCreate( @Nullable  Bundle savedInstanceState) {
@@ -47,22 +47,22 @@ public class PageU2a extends AppCompatActivity {
                 if(rb1.isChecked())
                 {
                     selectedOptionText=rb1.getText().toString();
-                    selectedOption=t.question1.option1.getOptionID();
+                    selectedOption=t.question1.option1;
                 }
                 else if(rb2.isChecked())
                 {
                     selectedOptionText=rb2.getText().toString();
-                    selectedOption=t.question1.option2.getOptionID();
+                    selectedOption=t.question1.option2;
                 }
                 else if(rb3.isChecked())
                 {
                     selectedOptionText=rb3.getText().toString();
-                    selectedOption=t.question1.option3.getOptionID();
+                    selectedOption=t.question1.option3;
                 }
                 else if(rb4.isChecked())
                 {
                     selectedOptionText=rb4.getText().toString();
-                    selectedOption=t.question1.option4.getOptionID();
+                    selectedOption=t.question1.option4;
                 }
                 u.setAnswer1(selectedOption);
                 Intent intentu2b=new Intent(PageU2a.this, PageU2b.class);

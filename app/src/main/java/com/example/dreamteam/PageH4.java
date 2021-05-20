@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class PageH4 extends AppCompatActivity {
     //Host View Page
-    //ROUGH ROUGH ROUGH ALGORITHM.
     private Button dreamifyButton;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,6 +22,14 @@ public class PageH4 extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(PageH4.this,"Dreeam Teamify Button",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(PageH4.this, PageH5.class));
+
+                //Assign each user into the subtem they are most likely to fall into.
+                for (User user : PageH1.teamMaster.listOfUsers){
+                        if (user.getLikelihoodScore() == 1){
+                            PageH1.teamMaster.team1.addTeamMember(user);
+                        }
+                }
+
 
             }
         });
