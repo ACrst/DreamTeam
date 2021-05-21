@@ -7,8 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,11 +28,13 @@ public class PageH4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_h4);
 
+        //Button Listener
         dreamifyButton = (Button) findViewById(R.id.buttonDreamTeamify);
+
+        //Button click listener
         dreamifyButton .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("CHECKING", "In H4 wassssup");
                 if (PageH1.teamMaster.listOfUsers.size() != 0) {
                     /* This algorithm splits the users into subteams based on each individual user's likelihood Score.
                      * THe likelihood Score is calculated in the User Class and is a number between 1-4. a perfect whole number like 1,2,3 or 4 means they
@@ -114,6 +121,7 @@ public class PageH4 extends AppCompatActivity {
                 else{
                     Toast.makeText(PageH4.this,"No users to split up.",Toast.LENGTH_SHORT).show();
                 }
+
                 //Jump to new Activity
                 Intent intent = new Intent(PageH4.this, PageH5.class);
                 startActivity(intent);

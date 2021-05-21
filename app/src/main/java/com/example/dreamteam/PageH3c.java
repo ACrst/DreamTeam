@@ -45,8 +45,6 @@ public class PageH3c extends AppCompatActivity {
         optCSpin.setAdapter(adapter);
         optDSpin.setAdapter(adapter);
 
-        Log.d("CHECKING", "b4 click ");
-
         q3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,21 +55,18 @@ public class PageH3c extends AppCompatActivity {
                 optionC = opC.getText().toString();
                 optionD = opD.getText().toString();
 
-                Log.d("CHECKING", "b4 populating spinners ");
                 //Extract the choice form Spinners
                 optAMapID = optASpin.getSelectedItem().toString();
                 optBMapID = optBSpin.getSelectedItem().toString();
                 optCMapID = optCSpin.getSelectedItem().toString();
                 optDMapID = optDSpin.getSelectedItem().toString();
 
-                Log.d("CHECKING", "b4 populating mapping ");
                 //Add the spinner mapping IDs into the options.
                 PageH1.teamMaster.findMappedIDOption(optAMapID,PageH1.teamMaster.question3, 1);
                 PageH1.teamMaster.findMappedIDOption(optBMapID,PageH1.teamMaster.question3, 2);
                 PageH1.teamMaster.findMappedIDOption(optCMapID,PageH1.teamMaster.question3, 3);
                 PageH1.teamMaster.findMappedIDOption(optDMapID,PageH1.teamMaster.question3, 4);
 
-                Log.d("CHECKING", "b4 loading");
                 //Add the question and options, and mappingIDs into the Question Master Object
                 PageH1.teamMaster.question3.setQuestion(q3String);
                 PageH1.teamMaster.question3.option1.setOptionText(optionA);

@@ -4,6 +4,7 @@
  */
 package com.example.dreamteam;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ActivityNotFoundException;
@@ -16,12 +17,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class PageU1 extends AppCompatActivity implements View.OnClickListener {
     //User Page1
     private EditText roomPin,username;
     private Button joinButton;
+    public static FirebaseDatabase u_db =FirebaseDatabase.getInstance();
+    public static DatabaseReference userCopyDB = u_db.getReference("https://dreamteam-39893-default-rtdb.firebaseio.com/");
+    public static TeamMaster teamMasterClone;
     public String u_Name, u_roomPin;
     public static User theUser;
 
@@ -33,7 +43,6 @@ public class PageU1 extends AppCompatActivity implements View.OnClickListener {
         username=(EditText) findViewById(R.id.usernameTxt);
         roomPin = (EditText) findViewById(R.id.roomPintxt);
         joinButton = (Button) findViewById(R.id.buttonJoin);
-
         joinButton.setOnClickListener(PageU1.this);
     }
 
@@ -41,8 +50,6 @@ public class PageU1 extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         //When the user clicks on the Join button
-        //1) validate the room key and make sure it is valid, if not set error message
-
         switch(v.getId())
         {
             case R.id.buttonJoin:
@@ -63,13 +70,13 @@ public class PageU1 extends AppCompatActivity implements View.OnClickListener {
                     Toast.makeText(PageU1.this,"Enter a  valid roompin",Toast.LENGTH_SHORT).show();
                 }
                 else {
+
                     if (username != null && roomPin != null) {
                         //Populating the User Object
                         theUser = new User(u_Name);
 
                         //Jump to next activity
                         Intent intentu1 = new Intent(PageU1.this, PageU2a.class);
-                        //intentu1.putExtra("USERN", username.toString());
                         startActivity(intentu1);
                         finish();
                     }

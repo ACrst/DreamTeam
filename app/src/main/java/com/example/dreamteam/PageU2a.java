@@ -59,7 +59,6 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
 
                     //Now populate User's option objects
 
-                Log.d("CHECKING", "b4 the intent");
                     //Jump Activities
                     Intent intentu2a = new Intent(PageU2a.this, PageU2b.class);
                     startActivity(intentu2a);

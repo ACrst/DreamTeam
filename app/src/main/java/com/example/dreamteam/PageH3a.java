@@ -77,19 +77,11 @@ public class PageH3a extends AppCompatActivity {
 
                 //Add the question and options, and mappingIDs into the Question Master Object
                 PageH1.teamMaster.question1.setQuestion(q1String);
-                Log.d("CHECKING", PageH1.teamMaster.question1.getQuestion());
                 PageH1.teamMaster.question1.option1.setOptionText(optionA);
-                Log.d("CHECKING", PageH1.teamMaster.question1.option1.getOption());
-                Log.d("CHECKING", String.valueOf(PageH1.teamMaster.question1.option1.getMappingID()));
                 PageH1.teamMaster.question1.option2.setOptionText(optionB);
-                Log.d("CHECKING", PageH1.teamMaster.question1.option2.getOption());
-                Log.d("CHECKING", String.valueOf(PageH1.teamMaster.question1.option2.getMappingID()));
                 PageH1.teamMaster.question1.option3.setOptionText(optionC);
-                Log.d("CHECKING", PageH1.teamMaster.question1.option3.getOption());
-                Log.d("CHECKING", String.valueOf(PageH1.teamMaster.question1.option3.getMappingID()));
                 PageH1.teamMaster.question1.option4.setOptionText(optionD);
-                Log.d("CHECKING", PageH1.teamMaster.question1.option4.getOption());
-                Log.d("CHECKING", String.valueOf(PageH1.teamMaster.question1.option4.getMappingID()));
+
                 Intent intent = new Intent(PageH3a.this, PageH3b.class);
                 startActivity(intent);
                 finish();
