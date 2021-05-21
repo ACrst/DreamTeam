@@ -87,7 +87,8 @@ public class PageU2c extends AppCompatActivity {
                     Toast.makeText(PageU2c.this,"Please select one of the options",Toast.LENGTH_SHORT).show();
                 }
 
-                //Now populate User's option objects
+                //Add the User to the database.
+
 
                 //Jump Activities
                 Intent intentu2c = new Intent(PageU2c.this, PageU3.class);

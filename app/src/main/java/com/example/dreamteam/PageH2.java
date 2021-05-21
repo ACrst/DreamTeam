@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ public class PageH2 extends AppCompatActivity {
     //Views
     public Button saveButton;
     public EditText team1Text, team2Text, team3Text,team4Text;
+    public TextView displayPin;
     public String team1Name, team2Name, team3Name, team4Name;
 
     @Override
@@ -31,7 +33,10 @@ public class PageH2 extends AppCompatActivity {
         team2Text = (EditText) findViewById(R.id.editText_team2);
         team3Text = (EditText) findViewById(R.id.editText_team3);
         team4Text = (EditText) findViewById(R.id.editText_team4);
+        displayPin = (TextView) findViewById(R.id.rpH2);
 
+        //Display the room pin
+        displayPin.setText(PageH1.roompin);
 
         //Populate Team Master Object on button click
         saveButton.setOnClickListener(new View.OnClickListener() {

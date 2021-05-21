@@ -23,7 +23,7 @@ import java.util.Random;
 public class PageH4 extends AppCompatActivity {
     //Host View Page
     private Button dreamifyButton;
-    private TextView usersJoined;
+    private TextView usersJoined, displayPin;
     public int avgNumMembers;
 
     //public List<User> dynamicallyGrowingList;
@@ -36,6 +36,10 @@ public class PageH4 extends AppCompatActivity {
         //Validate Views
         dreamifyButton = (Button) findViewById(R.id.buttonDreamTeamify);
         usersJoined = (TextView) findViewById(R.id.finalHost_message);
+        displayPin = (TextView) findViewById(R.id.rpH4);
+
+        //Display the room pin
+        displayPin.setText(PageH1.roompin);
 
         //Now poll database and continually update the Host with the users being added in.
         Log.d("CHECKING", "Entering log");
