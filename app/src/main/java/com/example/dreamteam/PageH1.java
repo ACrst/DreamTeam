@@ -5,6 +5,7 @@ package com.example.dreamteam;
  */
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -53,6 +54,7 @@ public class PageH1 extends AppCompatActivity {
                     sb.append(randomChar);
                 }
                 String roompin=sb.toString();
+                /*
                 Toast.makeText(PageH1.this,roompin,Toast.LENGTH_SHORT).show();
                 roompin_text_generated.setText(roompin);
 
@@ -62,7 +64,7 @@ public class PageH1 extends AppCompatActivity {
 
                 //Add roompin to Team Master Object
                 teamMaster.setRoomPin(roompin);
-
+*/
                 //Gson gson=new Gson();
                 /*
                 root.setValue(hostUsername);
@@ -72,7 +74,11 @@ public class PageH1 extends AppCompatActivity {
 
                 root.push().setValue(usermap); //creates a unique key along with the host object*/
 
-                //alternate json
+                Intent intent = new Intent(PageH1.this, PageH2.class);
+                Toast.makeText(PageH1.this,"generate roompin clicked",Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+                finish();
+
 
             }
         });

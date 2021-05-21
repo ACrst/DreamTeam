@@ -22,7 +22,11 @@ public class PageH3c extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.page_h3c);
+
         //Validate Views
+        q3Button = (Button) findViewById(R.id.q3Button);
+        /*
         q3 = (EditText) findViewById(R.id.question2);
         opA = (EditText) findViewById(R.id.optA3);
         opB = (EditText) findViewById(R.id.optB3);
@@ -32,7 +36,6 @@ public class PageH3c extends AppCompatActivity {
         optBSpin =(Spinner)findViewById(R.id.spinnerOptB3);
         optCSpin =(Spinner)findViewById(R.id.spinnerOptC3);
         optDSpin =(Spinner)findViewById(R.id.spinnerOptD3);
-        q3Button = (Button) findViewById(R.id.q3Button);
 
         //Populate Spinners
         PageH1.teamMaster.populateSpinnerArray();
@@ -69,12 +72,14 @@ public class PageH3c extends AppCompatActivity {
         PageH1.teamMaster.question3.option2.setOptionText(optionB);
         PageH1.teamMaster.question3.option3.setOptionText(optionC);
         PageH1.teamMaster.question3.option4.setOptionText(optionD);
-
+*/
         q3Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(PageH3c.this,"Save button clicked",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(PageH3c.this, PageH4.class));
+                Intent intent = new Intent(PageH3c.this, PageH4.class);
+                Toast.makeText(PageH3c.this,"generate roompin clicked",Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+                finish();
 
             }
         });

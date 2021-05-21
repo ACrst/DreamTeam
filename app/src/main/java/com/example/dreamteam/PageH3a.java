@@ -22,11 +22,14 @@ public class PageH3a extends AppCompatActivity {
     private String optionA, optionB, optionC, optionD, q1String, optAMapID, optBMapID, optCMapID, optDMapID;
     private Spinner optASpin,optBSpin, optCSpin, optDSpin;
     @Override
+
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Intent intent=getIntent();
+        setContentView(R.layout.page_h3a);
 
         //Validate Views
+        q1Button = (Button) findViewById(R.id.q1Button);
+        /*
         q1 = (EditText) findViewById(R.id.question1);
         opA = (EditText) findViewById(R.id.optA);
         opB = (EditText) findViewById(R.id.optB);
@@ -36,7 +39,7 @@ public class PageH3a extends AppCompatActivity {
         optBSpin =(Spinner)findViewById(R.id.spinnerOptB);
         optCSpin =(Spinner)findViewById(R.id.spinnerOptC);
         optDSpin =(Spinner)findViewById(R.id.spinnerOptD);
-        q1Button = (Button) findViewById(R.id.q1Button);
+
 
         //Populate Spinners
         PageH1.teamMaster.populateSpinnerArray();
@@ -74,13 +77,17 @@ public class PageH3a extends AppCompatActivity {
         PageH1.teamMaster.question1.option2.setOptionText(optionB);
         PageH1.teamMaster.question1.option3.setOptionText(optionC);
         PageH1.teamMaster.question1.option4.setOptionText(optionD);
-
+*/
         //Jump to next activity
         q1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(PageH3a.this,"Save button clicked",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(PageH3a.this, PageH3b.class));
+
+                Intent intent = new Intent(PageH3a.this, PageH3b.class);
+                Toast.makeText(PageH3a.this,"...",Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+                finish();
 
             }
         });
