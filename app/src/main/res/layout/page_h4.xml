@@ -40,6 +40,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.452" />
 
+    <TextView
+        android:id="@+id/textView_roompin"
+        android:layout_width="101dp"
+        android:layout_height="25dp"
+        android:fontFamily="@font/dreamteamfonts"
+        android:text="Room Pin:"
+        android:textColor="#2196F3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028" />
+
     <Button
         android:id="@+id/buttonDreamTeamify"
         android:layout_width="228dp"
