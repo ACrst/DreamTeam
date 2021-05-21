@@ -54,16 +54,20 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
         //3) fetch the option objects from the database.
         //4) populate the option textviews.
 
-        DatabaseReference ref= FirebaseDatabase.getInstance().getReference().child("ASHQNE").child("question1");//child("ASHQNE");
+        DatabaseReference ref= FirebaseDatabase.getInstance().getReference().child("ASHQNE");//child("ASHQNE");
 
 
         ref.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String q1text=snapshot.child("question").getValue().toString();
-                        Toast.makeText(PageU2a.this,q1text,Toast.LENGTH_SHORT).show();
-                        question1.setText(q1text);
+                        String q1text=snapshot.child("question1").child("question").getValue().toString();
+//                        String op1=snapshot.child("question1").child("question").child("option1").child("optionText").getValue().toString();
+//                        String op2=snapshot.child("question1").child("question").child("option2").child("optionText").getValue().toString();
+//                        String op3=snapshot.child("question1").child("question").child("option3").child("optionText").getValue().toString();
+//                        String op4=snapshot.child("question1").child("question").child("option4").child("optionText").getValue().toString();
 
+                        question1.setText(q1text);
+//                        rb1.setText(op1);
                     }
 
                     @Override
