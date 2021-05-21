@@ -9,11 +9,11 @@ import java.util.List;
 
 public class TeamMaster {
     //Randomly generated alphanumeric, defines this team.
-    private String roomPin;
+    public String roomPin;
     //userName of the Host
-    private String host;
+    public String host;
     //List of Users joining this Team
-    List<User> listOfUsers =  new ArrayList<User>();
+    public List<User> listOfUsers =  new ArrayList<User>();
     //These are the four sub teams.
     public SubTeamMaster team1;
     public  SubTeamMaster team2;
@@ -21,7 +21,7 @@ public class TeamMaster {
     public  SubTeamMaster team4;
     //This list holds the subteam names
     public SubTeamMaster[] listOfSubTeams;
-    List<String> spinnerArray =  new ArrayList<String>();
+    public List<String> spinnerArray =  new ArrayList<String>();
     //These are the 3 questions associated with this room pin
     public QuestionMaster question1;
     public QuestionMaster question2;

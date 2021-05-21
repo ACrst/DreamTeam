@@ -26,7 +26,7 @@ public class PageH1 extends AppCompatActivity {
     private Button generate_roompin_button;
     private TextView roompin_text_generated;
     private FirebaseDatabase db=FirebaseDatabase.getInstance();
-    private DatabaseReference root=db.getReference().child("users");
+    private DatabaseReference root=db.getReference();
     public static TeamMaster teamMaster;
 
     @Override
@@ -54,7 +54,7 @@ public class PageH1 extends AppCompatActivity {
                     sb.append(randomChar);
                 }
                 String roompin=sb.toString();
-                /*
+
                 Toast.makeText(PageH1.this,roompin,Toast.LENGTH_SHORT).show();
                 roompin_text_generated.setText(roompin);
 
@@ -64,15 +64,9 @@ public class PageH1 extends AppCompatActivity {
 
                 //Add roompin to Team Master Object
                 teamMaster.setRoomPin(roompin);
-*/
-                //Gson gson=new Gson();
-                /*
-                root.setValue(hostUsername);
-                HashMap<String,String> usermap=new HashMap<>();
-                usermap.put("hostUsername",hostUsername);
-                usermap.put("roompin",roompin);
 
-                root.push().setValue(usermap); //creates a unique key along with the host object*/
+                //add the
+                //root.child(roompin).setValue(teamMaster); //creates a unique key along with the host object
 
                 Intent intent = new Intent(PageH1.this, PageH2.class);
                 Toast.makeText(PageH1.this,"generate roompin clicked",Toast.LENGTH_SHORT).show();
