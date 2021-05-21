@@ -12,7 +12,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/dreamteamfonts"
+        android:fontFamily="@font/beachday"
         android:text="@string/app_name"
         android:textColor="#E87224"
         android:textSize="80sp"

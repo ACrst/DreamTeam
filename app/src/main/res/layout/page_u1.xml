@@ -43,7 +43,7 @@
         app:layout_constraintVertical_bias="0.344" />
 
     <EditText
-        android:id="@+id/roomPinTxt"
+        android:id="@+id/roomPintxt"
         android:layout_width="344dp"
         android:layout_height="121dp"
         android:background="#549BD5"

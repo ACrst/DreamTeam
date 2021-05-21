@@ -6,43 +6,82 @@ package com.example.dreamteam;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class PageU1 extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class PageU1 extends AppCompatActivity implements View.OnClickListener {
     //User Page1
     private EditText roomPin,username;
     private Button joinButton;
-    public static final String User_Name="com.example.dreamteam.User_Name";
+
+
+//    public final static String USERN="com.example.dreamteam.USERNAME";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_u1);
 
-        Intent receiveIntent=getIntent();
         username=(EditText) findViewById(R.id.usernameTxt);
-        roomPin = (EditText) findViewById(R.id.roomPinTxt);
+        roomPin = (EditText) findViewById(R.id.roomPintxt);
         joinButton = (Button) findViewById(R.id.buttonJoin);
 
-        joinButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            //When the user clicks on the Join button
-                //1) validate the room key and make sure it is valid, if not set error message
-                //2) take them to page 4, a confirmation page showing that they are admitted to a room.
-                Toast.makeText(PageU1.this,"Join button clicked",Toast.LENGTH_SHORT).show();
+        joinButton.setOnClickListener(PageU1.this);
 
-                Intent intentu2a=new Intent(PageU1.this, PageU2a.class);
-                intentu2a.putExtra(User_Name,username.getText().toString());
-                startActivity(intentu2a);
 
-            }
-        });
+
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        //When the user clicks on the Join button
+        //1) validate the room key and make sure it is valid, if not set error message
+        //2) take them to page 4, a confirmation page showing that they are admitted to a room.
+
+        switch(v.getId())
+        {
+            case R.id.buttonJoin:
+
+
+                if(username==null && roomPin!=null)
+                {
+                    Toast.makeText(PageU1.this,"Enter your correct username",Toast.LENGTH_SHORT).show();
+
+                }
+                else if(roomPin==null && username!=null)
+                {
+                    Toast.makeText(PageU1.this,"Enter a  valid roompin",Toast.LENGTH_SHORT).show();
+                }
+                else if (username==null && roomPin==null )
+                {
+                    Toast.makeText(PageU1.this,"Enter a  valid username and roompin",Toast.LENGTH_SHORT).show();
+                }
+                else
+                if(username!=null && roomPin!=null)
+                {
+                    String username="AIO";
+                    Intent intentu2a = new Intent(PageU1.this, PageU2a.class);
+                    intentu2a.putExtra("USERN", username.toString());
+                    Toast.makeText(PageU1.this,"Join button clicked",Toast.LENGTH_SHORT).show();
+                    startActivity(intentu2a);
+                    finish();
+
+                }
+                break;
+
+
+
+        }
     }
 
     @Override
@@ -56,7 +95,15 @@ public class PageU1 extends AppCompatActivity {
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
     }
+
+
+
 }

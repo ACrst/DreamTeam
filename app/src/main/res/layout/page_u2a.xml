@@ -10,9 +10,9 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/dreamteamfonts"
+        android:layout_width="393dp"
+        android:layout_height="79dp"
+        android:fontFamily="@font/beachday"
         android:text="@string/app_name"
         android:textColor="#E87224"
         android:textSize="80sp"
@@ -29,7 +29,7 @@
         android:layout_height="82dp"
         android:fontFamily="@font/beachday"
         android:textColor="#FFEB3B"
-        android:text="Congratulations! You have entered [Host]'s team. Answer the Following questions to be placed in a tema."
+        android:text="Congratulations! You have entered [Host]'s team. Answer the Following questions to be placed in a team."
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +38,7 @@
         app:layout_constraintVertical_bias="0.183" />
 
     <RadioGroup
-        android:id="@+id/radiogroup1"
+        android:id="@+id/rg1"
         android:layout_width="319dp"
         android:layout_height="311dp"
         android:layout_centerInParent="true"
@@ -53,7 +53,7 @@
             android:id="@+id/rb11"
             android:layout_width="175dp"
             android:layout_height="59dp"
-            android:fontFamily="@font/dreamteamfonts"
+            android:fontFamily="@font/beachday"
             android:textColor="#FFEB3B"
             android:textSize="30sp" />
 
@@ -61,7 +61,7 @@
             android:id="@+id/rb12"
             android:layout_width="175dp"
             android:layout_height="59dp"
-            android:fontFamily="@font/dreamteamfonts"
+            android:fontFamily="@font/beachday"
             android:textColor="#FFEB3B"
             android:textSize="30sp" />
 
@@ -69,7 +69,7 @@
             android:id="@+id/rb13"
             android:layout_width="175dp"
             android:layout_height="59dp"
-            android:fontFamily="@font/dreamteamfonts"
+            android:fontFamily="@font/beachday"
             android:textColor="#FFEB3B"
             android:textSize="30sp" />
 
@@ -77,7 +77,7 @@
             android:id="@+id/rb14"
             android:layout_width="175dp"
             android:layout_height="59dp"
-            android:fontFamily="@font/dreamteamfonts"
+            android:fontFamily="@font/beachday"
             android:textColor="#FFEB3B"
             android:textSize="30sp" />
 
@@ -88,7 +88,7 @@
         android:layout_width="170dp"
         android:layout_height="66dp"
         android:background="#2196F3"
-        android:fontFamily="@font/dreamteamfonts"
+        android:fontFamily="@font/beachday"
         android:text="Submit"
         android:textColor="#FFEB3B"
         android:textSize="30dp"
@@ -106,7 +106,7 @@
         android:text="Question displayed here"
         android:textColor="#FFEB3B"
         android:background="#549BD5"
-        android:fontFamily="@font/dreamteamfonts"
+        android:fontFamily="@font/beachday"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
