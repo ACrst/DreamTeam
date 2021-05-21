@@ -33,7 +33,7 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
     private RadioButton rb1,rb2,rb3,rb4;
     private RadioGroup grp;
     Option selectedOption;
-    int opA,opB,opC,opD;
+    String opA,opB,opC,opD;
 
     @Override
     protected void onCreate( @Nullable  Bundle savedInstanceState) {
@@ -72,11 +72,11 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
                         rb2.setText(op2);
                         rb3.setText(op3);
                         rb4.setText(op4);
-//                        opA=(Integer) snapshot.child("option1").child("mappingID").getValue();
-//                        opB=(Integer) snapshot.child("option2").child("mappingID").getValue();
-//                        opC=(Integer) snapshot.child("option3").child("mappingID").getValue();
-//                        opD=(Integer) snapshot.child("option4").child("mappingID").getValue();
-
+                        opA=snapshot.child("option1").child("mappingID").getValue().toString();
+                        opB=snapshot.child("option2").child("mappingID").getValue().toString();
+                        opC=snapshot.child("option3").child("mappingID").getValue().toString();
+                        opD=snapshot.child("option4").child("mappingID").getValue().toString();
+                        Log.d("Question1",opA+","+opB+","+opC+","+opD);
 
 
                     }
@@ -87,26 +87,25 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
                     }
                 });
 
-        opA=opB=opC=opD=1;
         submitQ1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("CHECKING", "b4 the retrieval");
                     //Retrieve the option checked by User.
                 if(rb1.isChecked()) {
-                    selectedOption.setMappindID(opA);
+                    selectedOption.setMappindID(Integer.parseInt(opA));
                 }
                 else if(rb2.isChecked()) {
 
-                    selectedOption.setMappindID(opB);
+                    selectedOption.setMappindID(Integer.parseInt(opB));
                 }
                 else if(rb3.isChecked()) {
 
-                    selectedOption.setMappindID(opC);
+                    selectedOption.setMappindID(Integer.parseInt(opC));
                 }
                 else if(rb4.isChecked()) {
 
-                    selectedOption.setMappindID(opD);
+                    selectedOption.setMappindID(Integer.parseInt(opD));
                 }
                 Log.d("Question1", String.valueOf(selectedOption.getMappingID()));
                 if(grp.getCheckedRadioButtonId()==-1)
