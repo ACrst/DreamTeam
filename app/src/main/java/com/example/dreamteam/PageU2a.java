@@ -72,7 +72,6 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
 //                        rb3.setText(op3);
 //                        rb4.setText(op4);
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
 
@@ -98,8 +97,6 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
                     //Now populate User's option objects
 
 
-//
-                Log.d("CHECKING", "b4 the intent");
                     //Jump Activities
                     Intent intentu2a = new Intent(PageU2a.this, PageU2b.class);
                     startActivity(intentu2a);

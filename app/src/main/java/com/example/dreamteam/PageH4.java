@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,20 +23,28 @@ import java.util.Random;
 public class PageH4 extends AppCompatActivity {
     //Host View Page
     private Button dreamifyButton;
+    private TextView usersJoined;
     public int avgNumMembers;
+
+    //public List<User> dynamicallyGrowingList;
+    String tst;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_h4);
 
-        //Button Listener
+        //Validate Views
         dreamifyButton = (Button) findViewById(R.id.buttonDreamTeamify);
+        usersJoined = (TextView) findViewById(R.id.finalHost_message);
 
         //Now poll database and continually update the Host with the users being added in.
+        Log.d("CHECKING", "Entering log");
         PageH1.root.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                snapshot.child(PageH1.roompin).child("listOfUsers").getValue();
+                 tst = snapshot.child(PageH1.roompin).child("listOfUsers").getValue().toString();
+                 //Log.d("CHECKING", tst);
+                 usersJoined.setText(tst);
             }
 
             @Override
