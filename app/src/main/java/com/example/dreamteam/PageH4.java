@@ -32,7 +32,7 @@ public class PageH4 extends AppCompatActivity {
         dreamifyButton = (Button) findViewById(R.id.buttonDreamTeamify);
 
         //Now poll database and continually update the Host with the users being added in.
-        /*PageH1.root.addValueEventListener(new ValueEventListener() {
+        PageH1.root.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 snapshot.child(PageH1.roompin).child("listOfUsers").getValue();
@@ -42,7 +42,7 @@ public class PageH4 extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        });*/
+        });
 
         //Button click listener
         dreamifyButton .setOnClickListener(new View.OnClickListener() {

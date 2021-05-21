@@ -29,10 +29,10 @@ public class PageU1 extends AppCompatActivity implements View.OnClickListener {
     //User Page1
     private EditText roomPin,username;
     private Button joinButton;
-    public static FirebaseDatabase u_db =FirebaseDatabase.getInstance();
-    public static DatabaseReference userCopyDB = u_db.getReference("https://dreamteam-39893-default-rtdb.firebaseio.com/");
+    /*public static FirebaseDatabase u_db =FirebaseDatabase.getInstance();
+    public static DatabaseReference userCopyDB = u_db.getReference("https://dreamteam-39893-default-rtdb.firebaseio.com/");*/
     public static TeamMaster teamMasterClone;
-    public String u_Name, u_roomPin;
+    public static String u_Name, u_roomPin;
     public static User theUser;
 
     @Override
@@ -74,6 +74,7 @@ public class PageU1 extends AppCompatActivity implements View.OnClickListener {
                     if (username != null && roomPin != null) {
                         //Populating the User Object
                         theUser = new User(u_Name);
+                        theUser.setRoompin(u_roomPin);
 
                         //Jump to next activity
                         Intent intentu1 = new Intent(PageU1.this, PageU2a.class);

@@ -33,7 +33,6 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
     private RadioGroup grp;
     Option selectedOption;
 
-
     @Override
     protected void onCreate( @Nullable  Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,9 +53,7 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
         //3) fetch the option objects from the database.
         //4) populate the option textviews.
 
-        DatabaseReference ref= FirebaseDatabase.getInstance().getReference().child("ASHQNE").child("question1");//child("ASHQNE");
-
-
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child(PageU1.u_roomPin).child("question1");
         ref.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
