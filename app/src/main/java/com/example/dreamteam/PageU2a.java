@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,7 +33,7 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
     private RadioButton rb1,rb2,rb3,rb4;
     private RadioGroup grp;
     Option selectedOption;
-
+    int opA,opB,opC,opD;
 
     @Override
     protected void onCreate( @Nullable  Bundle savedInstanceState) {
@@ -71,27 +72,12 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
                         rb2.setText(op2);
                         rb3.setText(op3);
                         rb4.setText(op4);
+//                        opA=(Integer) snapshot.child("option1").child("mappingID").getValue();
+//                        opB=(Integer) snapshot.child("option2").child("mappingID").getValue();
+//                        opC=(Integer) snapshot.child("option3").child("mappingID").getValue();
+//                        opD=(Integer) snapshot.child("option4").child("mappingID").getValue();
 
-                        if(rb1.isChecked()) {
-                            selectedOption.setMappindID((Integer) snapshot.child("option1").child("mappingID").getValue());
-                        }
-                        else if(rb2.isChecked()) {
 
-                            selectedOption.setMappindID((Integer) snapshot.child("option2").child("mappingID").getValue());
-                        }
-                        else if(rb3.isChecked()) {
-
-                            selectedOption.setMappindID((Integer) snapshot.child("option3").child("mappingID").getValue());
-                        }
-                        else if(rb4.isChecked()) {
-
-                            selectedOption.setMappindID((Integer) snapshot.child("option4").child("mappingID").getValue());
-                        }
-                        if(grp.getCheckedRadioButtonId()==-1)
-                        {
-                            //no radio buttons are checked
-                            Toast.makeText(PageU2a.this,"Please select one of the options",Toast.LENGTH_SHORT).show();
-                        }
 
                     }
 
@@ -101,13 +87,33 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
                     }
                 });
 
-
+        opA=opB=opC=opD=1;
         submitQ1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("CHECKING", "b4 the retrieval");
                     //Retrieve the option checked by User.
+                if(rb1.isChecked()) {
+                    selectedOption.setMappindID(opA);
+                }
+                else if(rb2.isChecked()) {
 
+                    selectedOption.setMappindID(opB);
+                }
+                else if(rb3.isChecked()) {
+
+                    selectedOption.setMappindID(opC);
+                }
+                else if(rb4.isChecked()) {
+
+                    selectedOption.setMappindID(opD);
+                }
+                Log.d("Question1", String.valueOf(selectedOption.getMappingID()));
+                if(grp.getCheckedRadioButtonId()==-1)
+                {
+                    //no radio buttons are checked
+                    Toast.makeText(PageU2a.this,"Please select one of the options",Toast.LENGTH_SHORT).show();
+                }
 
 
 

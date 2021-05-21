@@ -65,14 +65,18 @@ public class PageU1 extends AppCompatActivity implements View.OnClickListener {
                 else {
                     if (username != null && roomPin != null) {
                         //Populating the User Object
-                        theUser = new User(u_Name);
-                        PageU1.theUser.setUserName(u_Name);
-                        PageU1.theUser.setRoompin(u_roomPin);
-                        //Jump to next activity
-                        Intent intentu1 = new Intent(PageU1.this, PageU2a.class);
-                        //intentu1.putExtra("USERN", username.toString());
-                        startActivity(intentu1);
-                        finish();
+                        //check if roompin exists in firebase db then only allow
+
+                        {
+                            theUser = new User(u_Name);
+                            PageU1.theUser.setUserName(u_Name);
+                            PageU1.theUser.setRoompin(u_roomPin);
+                            //Jump to next activity
+                            Intent intentu1 = new Intent(PageU1.this, PageU2a.class);
+                            //intentu1.putExtra("USERN", username.toString());
+                            startActivity(intentu1);
+                            finish();
+                        }
                     }
                 }
                 break;
