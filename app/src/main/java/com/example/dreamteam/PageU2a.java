@@ -54,23 +54,23 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
         //3) fetch the option objects from the database.
         //4) populate the option textviews.
 
-        DatabaseReference ref= FirebaseDatabase.getInstance().getReference().child("ASHQNE").child("question1");//child("ASHQNE");
+        DatabaseReference ref= FirebaseDatabase.getInstance().getReference().child(PageU1.theUser.getRoompin().toString().toUpperCase()).child("question1");//child("ASHQNE");
 
 
         ref.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String q1text=snapshot.child("question").getValue().toString();
-//                        String op1=snapshot.child("question").child("option1").child("optionText").getValue().toString();
-//                        String op2=snapshot.child("question").child("option2").child("optionText").getValue().toString();
-//                        String op3=snapshot.child("question").child("option3").child("optionText").getValue().toString();
-//                        String op4=snapshot.child("question").child("option4").child("optionText").getValue().toString();
-
+                        String op1=snapshot.child("option1").child("option").getValue().toString();
+                        String op2=snapshot.child("option2").child("option").getValue().toString();
+                        String op3=snapshot.child("option3").child("option").getValue().toString();
+                        String op4=snapshot.child("option4").child("option").getValue().toString();
+                        Log.d("Question1",op1.toUpperCase());
                         question1.setText(q1text);
-//                        rb1.setText(op1);
-//                        rb2.setText(op2);
-//                        rb3.setText(op3);
-//                        rb4.setText(op4);
+                        rb1.setText(op1);
+                        rb2.setText(op2);
+                        rb3.setText(op3);
+                        rb4.setText(op4);
                     }
 
                     @Override
@@ -79,16 +79,27 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
                     }
                 });
 
+
         submitQ1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("CHECKING", "b4 the retrieval");
                     //Retrieve the option checked by User.
-                    String selectedOptionText;
-                    if(rb1.isChecked()) { selectedOptionText=rb1.getText().toString(); }
-                    else if(rb2.isChecked()) { selectedOptionText=rb2.getText().toString(); }
-                    else if(rb3.isChecked()) {selectedOptionText=rb3.getText().toString(); }
-                    else if(rb4.isChecked()) {selectedOptionText=rb4.getText().toString(); }
+
+                    if(rb1.isChecked()) {
+                        selectedOption.setOptionText(rb1.getText().toString());
+                        selectedOption.setMappindID(1);
+                    }
+                    else if(rb2.isChecked()) {
+                        selectedOption.setOptionText(rb2.getText().toString());
+                        selectedOption.setMappindID(2);}
+                    else if(rb3.isChecked()) {
+                        selectedOption.setOptionText(rb3.getText().toString());
+                        selectedOption.setMappindID(3);}
+                    else if(rb4.isChecked()) {
+                        selectedOption.setOptionText(rb4.getText().toString());
+                        selectedOption.setMappindID(4);
+                    }
                     if(grp.getCheckedRadioButtonId()==-1)
                     {
                        //no radio buttons are checked
@@ -99,6 +110,7 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
 
 
 //
+                PageU1.theUser.setAnswer1(selectedOption);
                 Log.d("CHECKING", "b4 the intent");
                     //Jump Activities
                     Intent intentu2a = new Intent(PageU2a.this, PageU2b.class);
