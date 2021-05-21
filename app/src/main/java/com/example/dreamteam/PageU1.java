@@ -22,9 +22,8 @@ public class PageU1 extends AppCompatActivity implements View.OnClickListener {
     //User Page1
     private EditText roomPin,username;
     private Button joinButton;
-
-
-//    public final static String USERN="com.example.dreamteam.USERNAME";
+    public String u_Name, u_roomPin;
+    public static User theUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +35,6 @@ public class PageU1 extends AppCompatActivity implements View.OnClickListener {
         joinButton = (Button) findViewById(R.id.buttonJoin);
 
         joinButton.setOnClickListener(PageU1.this);
-
-
-
     }
 
 
@@ -46,33 +42,37 @@ public class PageU1 extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         //When the user clicks on the Join button
         //1) validate the room key and make sure it is valid, if not set error message
-        //2) take them to page 4, a confirmation page showing that they are admitted to a room.
 
         switch(v.getId())
         {
             case R.id.buttonJoin:
-                if(username==null && roomPin!=null)
-                {
-                    Toast.makeText(PageU1.this,"Enter your correct username",Toast.LENGTH_SHORT).show();
+                //Extracting the username and roompin
+                u_Name = username.getText().toString();
+                u_roomPin = roomPin.getText().toString();
 
-                }
-                else if(roomPin==null && username!=null)
-                {
-                    Toast.makeText(PageU1.this,"Enter a  valid roompin",Toast.LENGTH_SHORT).show();
-                }
-                else if (username==null && roomPin==null )
+                if (username==null && roomPin==null )
                 {
                     Toast.makeText(PageU1.this,"Enter a  valid username and roompin",Toast.LENGTH_SHORT).show();
                 }
-                else
-                if(username!=null && roomPin!=null)
+                else if(username==null)
                 {
-                    String username="AIO";
-                    Intent intentu2a = new Intent(PageU1.this, PageU2a.class);
-                    intentu2a.putExtra("USERN", username.toString());
-                    Toast.makeText(PageU1.this,"Join button clicked",Toast.LENGTH_SHORT).show();
-                    startActivity(intentu2a);
-                    finish();
+                    Toast.makeText(PageU1.this,"Enter your correct username",Toast.LENGTH_SHORT).show();
+                }
+                else if(roomPin==null)
+                {
+                    Toast.makeText(PageU1.this,"Enter a  valid roompin",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    if (username != null && roomPin != null) {
+                        //Populating the User Object
+                        theUser = new User(u_Name);
+
+                        //Jump to next activity
+                        Intent intentu2a = new Intent(PageU1.this, PageU2a.class);
+                        intentu2a.putExtra("USERN", username.toString());
+                        startActivity(intentu2a);
+                        finish();
+                    }
                 }
                 break;
         }

@@ -18,83 +18,49 @@ public class PageU2c extends AppCompatActivity {
     private RadioButton rb1,rb2,rb3,rb4;
     private RadioGroup grp;
     Option selectedOption;
-    public static final String User_Name="com.example.dreamteam.User_Name";
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.page_u2c);
 
-        Intent intent=getIntent();
-        String usern=intent.getStringExtra("USERN");
-//        User u=new User(usern);
-//        TeamMaster t=new TeamMaster();
-//        question3.setText(t.question3.getQuestion());
-//        rb1=(RadioButton)findViewById(R.id.rb31);
-//        rb2=(RadioButton)findViewById(R.id.rb32);
-//        rb3=(RadioButton)findViewById(R.id.rb33);
-//        rb4=(RadioButton)findViewById(R.id.rb34);
-//        rb1.setText(t.question3.option1.getOption());
-//        rb2.setText(t.question3.option2.getOption());
-//        rb3.setText(t.question3.option3.getOption());
-//        rb4.setText(t.question3.option4.getOption());
+    @Override
+    protected void onCreate( @Nullable  Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.page_u2a);
+
+        //Validate Views
+        rb1=(RadioButton)findViewById(R.id.rb31);
+        rb2=(RadioButton)findViewById(R.id.rb32);
+        rb3=(RadioButton)findViewById(R.id.rb33);
+        rb4=(RadioButton)findViewById(R.id.rb34);
+        grp=(RadioGroup)findViewById(R.id.radiogroup3);
         submitQ3 = (Button) findViewById(R.id.submitQ3);
-//        grp=(RadioGroup)findViewById(R.id.radiogroup3);
+
+
+        //1) fetch questionText from the data base
+        //2) populate question text view
+        //3) fetch the option objects from the database.
+        //4) populate the option textviews.
+
         submitQ3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Toast.makeText(PageU2c.this, "Submit Button clicked", Toast.LENGTH_SHORT).show();
-//                String selectedOptionText;
-//                if(rb1.isChecked())
-//                {
-//                    selectedOptionText=rb1.getText().toString();
-//                    selectedOption=t.question3.option1;
-//                }
-//                else if(rb2.isChecked())
-//                {
-//                    selectedOptionText=rb2.getText().toString();
-//                    selectedOption=t.question3.option2;
-//                }
-//                else if(rb3.isChecked())
-//                {
-//                    selectedOptionText=rb3.getText().toString();
-//                    selectedOption=t.question3.option3;
-//                }
-//                else if(rb4.isChecked())
-//                {
-//                    selectedOptionText=rb4.getText().toString();
-//                    selectedOption=t.question3.option4;
-//                }
-//
-//
-//                if(grp.getCheckedRadioButtonId()==-1)
-//                {
-//                    //no radio buttons are checked
-//                    Toast.makeText(PageU2c.this,"Please select one of the options",Toast.LENGTH_SHORT).show();
-//                }
-//                else {
-//                u.setAnswer3(selectedOption); //save selected option into User-Answer3
+                //Retrieve the option checked by User.
+                String selectedOptionText;
+                if(rb1.isChecked()) { selectedOptionText=rb1.getText().toString(); }
+                else if(rb2.isChecked()) { selectedOptionText=rb2.getText().toString(); }
+                else if(rb3.isChecked()) {selectedOptionText=rb3.getText().toString(); }
+                else if(rb4.isChecked()) {selectedOptionText=rb4.getText().toString(); }
+                if(grp.getCheckedRadioButtonId()==-1)
+                {
+                    //no radio buttons are checked
+                    Toast.makeText(PageU2c.this,"Please select one of the options",Toast.LENGTH_SHORT).show();
+                }
 
-                    //approximate User's likelihood Score.
-                    //u.approximateUserTeam();
+                //Now populate User's option objects
 
+                //Jump Activities
+                Intent intentu2c = new Intent(PageU2c.this, PageU3.class);
+                startActivity(intentu2c);
+                finish();
 
-                    Intent intentu3 = new Intent(PageU2c.this, PageU3.class);
-                    intentu3.putExtra("USERN", usern.toString());
-                    Toast.makeText(PageU2c.this,"submit3 button clicked",Toast.LENGTH_SHORT).show();
-                    startActivity(intentu3);
-                    finish();
-//                }
             }
         });
     }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
-
-
-
-
 }

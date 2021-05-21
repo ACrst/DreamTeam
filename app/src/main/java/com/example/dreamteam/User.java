@@ -65,7 +65,7 @@ public class User {
 
     //Getter
     public  float getLikelihoodScore(){return this.likelihoodScore; }
-    public void approximateUserTeam(){
+    public void calculateLikelihoodScore(){
         float avg = 0;
         avg += question1Answer.getMappingID();
         avg += question2Answer.getMappingID();
