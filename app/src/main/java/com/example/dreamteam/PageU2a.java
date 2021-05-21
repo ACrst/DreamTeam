@@ -71,6 +71,28 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
                         rb2.setText(op2);
                         rb3.setText(op3);
                         rb4.setText(op4);
+
+                        if(rb1.isChecked()) {
+                            selectedOption.setMappindID((Integer) snapshot.child("option1").child("mappingID").getValue());
+                        }
+                        else if(rb2.isChecked()) {
+
+                            selectedOption.setMappindID((Integer) snapshot.child("option2").child("mappingID").getValue());
+                        }
+                        else if(rb3.isChecked()) {
+
+                            selectedOption.setMappindID((Integer) snapshot.child("option3").child("mappingID").getValue());
+                        }
+                        else if(rb4.isChecked()) {
+
+                            selectedOption.setMappindID((Integer) snapshot.child("option4").child("mappingID").getValue());
+                        }
+                        if(grp.getCheckedRadioButtonId()==-1)
+                        {
+                            //no radio buttons are checked
+                            Toast.makeText(PageU2a.this,"Please select one of the options",Toast.LENGTH_SHORT).show();
+                        }
+
                     }
 
                     @Override
@@ -86,32 +108,14 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
                 Log.d("CHECKING", "b4 the retrieval");
                     //Retrieve the option checked by User.
 
-                    if(rb1.isChecked()) {
-                        selectedOption.setOptionText(rb1.getText().toString());
-                        selectedOption.setMappindID(1);
-                    }
-                    else if(rb2.isChecked()) {
-                        selectedOption.setOptionText(rb2.getText().toString());
-                        selectedOption.setMappindID(2);}
-                    else if(rb3.isChecked()) {
-                        selectedOption.setOptionText(rb3.getText().toString());
-                        selectedOption.setMappindID(3);}
-                    else if(rb4.isChecked()) {
-                        selectedOption.setOptionText(rb4.getText().toString());
-                        selectedOption.setMappindID(4);
-                    }
-                    if(grp.getCheckedRadioButtonId()==-1)
-                    {
-                       //no radio buttons are checked
-                        Toast.makeText(PageU2a.this,"Please select one of the options",Toast.LENGTH_SHORT).show();
-                    }
+
+
 
                     //Now populate User's option objects
 
 
-//
-                PageU1.theUser.setAnswer1(selectedOption);
-                Log.d("CHECKING", "b4 the intent");
+                    PageU1.theUser.setQuestion1Map(selectedOption.getMappingID());
+                    Log.d("CHECKING", "b4 the intent");
                     //Jump Activities
                     Intent intentu2a = new Intent(PageU2a.this, PageU2b.class);
                     startActivity(intentu2a);

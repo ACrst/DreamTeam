@@ -19,6 +19,34 @@ public class User {
         this.question3Map = 0;
     }
 
+    public void setLikelihoodScore(float likelihoodScore) {
+        this.likelihoodScore = likelihoodScore;
+    }
+
+    public int getQuestion1Map() {
+        return question1Map;
+    }
+
+    public void setQuestion1Map(int question1Map) {
+        this.question1Map = question1Map;
+    }
+
+    public int getQuestion2Map() {
+        return question2Map;
+    }
+
+    public void setQuestion2Map(int question2Map) {
+        this.question2Map = question2Map;
+    }
+
+    public int getQuestion3Map() {
+        return question3Map;
+    }
+
+    public void setQuestion3Map(int question3Map) {
+        this.question3Map = question3Map;
+    }
+
     public String getRoompin() {
         return roompin;
     }

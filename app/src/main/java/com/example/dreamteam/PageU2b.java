@@ -88,6 +88,7 @@ public class PageU2b extends AppCompatActivity {
 
                 //Now populate User's option objects
 
+                PageU1.theUser.setQuestion1Map(selectedOption.getMappingID());
                 //Jump Activities
                 Intent intentu2b = new Intent(PageU2b.this, PageU2c.class);
                 startActivity(intentu2b);
