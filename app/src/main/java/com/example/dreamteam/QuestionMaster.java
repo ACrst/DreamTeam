@@ -7,28 +7,14 @@ public class QuestionMaster {
     //This is the number of the question- that is 1,2,3
     private int questionID;
     private String questionText;
-    Option option1;
-    Option option2;
-    Option option3;
-    Option option4;
+    public Option option1;
+    public Option option2;
+    public Option option3;
+    public Option option4;
 
     public QuestionMaster(){
         this.questionID = 0;
         this.questionText = " ";
-        this.option1 = new Option();
-        this.option2 = new Option();
-        this.option3 = new Option();
-        this.option4 = new Option();
-        option1.setOptionID(1);
-        option2.setOptionID(2);
-        option3.setOptionID(3);
-        option4.setOptionID(4);
-    }
-
-    public QuestionMaster(int quesid,String qtext)
-    {
-        questionID=quesid;
-        questionText=qtext;
         this.option1 = new Option();
         this.option2 = new Option();
         this.option3 = new Option();
