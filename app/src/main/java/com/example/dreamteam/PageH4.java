@@ -16,23 +16,22 @@ import java.util.Random;
 public class PageH4 extends AppCompatActivity {
     //Host View Page
     private Button dreamifyButton;
-    private int avgNumMembers = (PageH1.teamMaster.listOfUsers.size())/4;
+    //private int avgNumMembers = (PageH1.teamMaster.listOfUsers.size())/4;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.page_h4);
 
         dreamifyButton = (Button) findViewById(R.id.buttonDreamTeamify);
         dreamifyButton .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(PageH4.this,"Dreeam Teamify Button",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(PageH4.this, PageH5.class));
-
-                /** This algorithm splits the users into subteams based on each individual user's likelihood Score.
+/*
+               // This algorithm splits the users into subteams based on each individual user's likelihood Score.
                  * THe likelihood Score is calculated in the User Class and is a number between 1-4. a perfect whole number like 1,2,3 or 4 means they
                  * are perfectly suited for the teams 1,2,3,4 respectively. A floating point score means they are put in the team they most closely match.
                  * For ex, a score of 1.25 assigns them to team 1.
-                 */
+                 //
                 List<User> overFlowUsers=  new ArrayList<User>();
                 for (User user : PageH1.teamMaster.listOfUsers){
                         if (user.getLikelihoodScore() <= 1.5){
@@ -118,7 +117,10 @@ public class PageH4 extends AppCompatActivity {
                 }
 
 
-
+*/
+                Intent intent = new Intent(PageH4.this, PageH5.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
