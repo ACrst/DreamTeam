@@ -22,7 +22,7 @@ public class PageU2b extends AppCompatActivity {
     @Override
     protected void onCreate( @Nullable  Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page_u2a);
+        setContentView(R.layout.page_u2b);
 
         //Validate Views
         rb1=(RadioButton)findViewById(R.id.rb21);

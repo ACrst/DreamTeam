@@ -2,6 +2,7 @@ package com.example.dreamteam;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -34,7 +35,7 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
         grp=(RadioGroup)findViewById(R.id.rg1);
         submitQ1 = (Button) findViewById(R.id.submitQ1);
 
-
+        Log.d("CHECKING", "b4 the click");
         //1) fetch questionText from the data base
         //2) populate question text view
         //3) fetch the option objects from the database.
@@ -43,6 +44,7 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
         submitQ1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d("CHECKING", "b4 the retrieval");
                     //Retrieve the option checked by User.
                     String selectedOptionText;
                     if(rb1.isChecked()) { selectedOptionText=rb1.getText().toString(); }
@@ -57,6 +59,7 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
 
                     //Now populate User's option objects
 
+                Log.d("CHECKING", "b4 the intent");
                     //Jump Activities
                     Intent intentu2a = new Intent(PageU2a.this, PageU2b.class);
                     startActivity(intentu2a);

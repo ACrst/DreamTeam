@@ -68,9 +68,9 @@ public class PageU1 extends AppCompatActivity implements View.OnClickListener {
                         theUser = new User(u_Name);
 
                         //Jump to next activity
-                        Intent intentu2a = new Intent(PageU1.this, PageU2a.class);
-                        intentu2a.putExtra("USERN", username.toString());
-                        startActivity(intentu2a);
+                        Intent intentu1 = new Intent(PageU1.this, PageU2a.class);
+                        //intentu1.putExtra("USERN", username.toString());
+                        startActivity(intentu1);
                         finish();
                     }
                 }
