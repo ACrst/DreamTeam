@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,8 +26,8 @@ public class PageH1 extends AppCompatActivity {
     private EditText hostname;
     private Button generate_roompin_button;
     private TextView roompin_text_generated;
-    private FirebaseDatabase db=FirebaseDatabase.getInstance();
-    private DatabaseReference root=db.getReference();
+    public static FirebaseDatabase db=FirebaseDatabase.getInstance();
+    public static DatabaseReference root=db.getReference();
     public static TeamMaster teamMaster;
 
     @Override
@@ -41,6 +42,9 @@ public class PageH1 extends AppCompatActivity {
         generate_roompin_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                teamMaster = new TeamMaster();
+
                 //generate a random alphanumeric character as the room pin
                 Random random=new Random();
                 int targetStringlength=6;
@@ -54,19 +58,17 @@ public class PageH1 extends AppCompatActivity {
                     sb.append(randomChar);
                 }
                 String roompin=sb.toString();
-
-                Toast.makeText(PageH1.this,roompin,Toast.LENGTH_SHORT).show();
                 roompin_text_generated.setText(roompin);
 
                 //Add Hostname to the Team Master Object
-                String hostUsername=hostname.getText().toString();
+
+                String hostUsername = hostname.getText().toString();
                 teamMaster.setHostName(hostUsername);
+                Log.d("CHECKING", teamMaster.host);
 
                 //Add roompin to Team Master Object
                 teamMaster.setRoomPin(roompin);
-
-                //add the
-                //root.child(roompin).setValue(teamMaster); //creates a unique key along with the host object
+                Log.d("CHECKING", teamMaster.roomPin);
 
                 Intent intent = new Intent(PageH1.this, PageH2.class);
                 Toast.makeText(PageH1.this,"generate roompin clicked",Toast.LENGTH_SHORT).show();

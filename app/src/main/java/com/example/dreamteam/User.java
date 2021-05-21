@@ -11,6 +11,12 @@ public class User {
 
     public User(String uname){
         this.userName = uname;
+        this.roompin = " ";
+        this.subTeamID = 0;
+        this.likelihoodScore = 0;
+        this.question1Answer = new Option();
+        this.question2Answer = new Option();
+        this.question3Answer = new Option();
     }
 
     public String getRoompin() {

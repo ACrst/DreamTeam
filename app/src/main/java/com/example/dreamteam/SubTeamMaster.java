@@ -1,13 +1,21 @@
 package com.example.dreamteam;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class SubTeamMaster {
     private int teamID; //Can only be 1,2,3,4
-    private String teamName; // Eg, Team Basketball
-    //private User[] listOfSubUsers; //the list of users in this subteam.
-    List<User> listOfSubUsers =  new ArrayList<User>();
+    public String teamName; // Eg, Team Basketball
+    //the list of users in this subteam.
+    List<User> listOfSubUsers;
+
+    public SubTeamMaster(){
+        this.teamID = 0;
+        this.teamName = "";
+        this.listOfSubUsers = new ArrayList<User>();
+    }
 
     public int getTeamID() {
         return teamID;

@@ -15,11 +15,18 @@ public class Option {
     private String optionText; //content of the option
     private int mappingID; //maps the answer specified by the user to the option
 
+    public Option(){
+        this.optionID = 0;
+        this.optionText = " ";
+        this.mappingID = 0;
+    }
+
     public Option(int optID, String optText){
         optionID=optID;
         optionText=optText;
-
+        this.mappingID = 0;
     }
+
     //Getters
     public String getOption(){
         return optionText;

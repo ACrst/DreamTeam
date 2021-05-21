@@ -12,33 +12,61 @@ public class TeamMaster {
     public String roomPin;
     //userName of the Host
     public String host;
+
+    public void setHostName(String uname){
+        /*if (uname.length() > 15 || uname.length() < 3 ){
+            //Toast.makeText(TeamMaster.this, "User Name must be between 3 and 15 characters", Toast.LENGTH_SHORT).show();
+        }*/
+        this.host = uname;
+
+    }
+
+    public void setRoomPin(String pin){
+        this.roomPin = pin;
+    }
+
+
     //List of Users joining this Team
-    public List<User> listOfUsers =  new ArrayList<User>();
+    public List<User> listOfUsers;
     //These are the four sub teams.
     public SubTeamMaster team1;
     public  SubTeamMaster team2;
     public  SubTeamMaster team3;
     public  SubTeamMaster team4;
     //This list holds the subteam names
-    public SubTeamMaster[] listOfSubTeams;
-    public List<String> spinnerArray =  new ArrayList<String>();
+    public List<SubTeamMaster> listOfSubTeams;
+    public List<String> spinnerArray;
     //These are the 3 questions associated with this room pin
     public QuestionMaster question1;
     public QuestionMaster question2;
     public QuestionMaster question3;
 
     public TeamMaster(){
+        //Initializing the list of Users
+        this.listOfUsers =  new ArrayList<User>();
+        this.spinnerArray =  new ArrayList<String>();
+        this.listOfSubTeams = new ArrayList<SubTeamMaster>();
+
         //Initializing subteams
+        this.team1 = new SubTeamMaster();
+        this.team2 = new SubTeamMaster();
+        this.team3 = new SubTeamMaster();
+        this.team4 = new SubTeamMaster();
         team1.setTeamID(1);
         team2.setTeamID(2);
         team3.setTeamID(3);
         team4.setTeamID(4);
         //Adding them to the array.
-        listOfSubTeams[0] = team1;
-        listOfSubTeams[1] = team2;
-        listOfSubTeams[2] = team3;
-        listOfSubTeams[3] = team4;
+        listOfSubTeams.add(team1);
+        listOfSubTeams.add(team2);
+        listOfSubTeams.add(team3);
+        listOfSubTeams.add(team4);
+
         //Initializing Questions
+        this.question1 = new QuestionMaster();
+        this.question2 = new QuestionMaster();
+        this.question3 = new QuestionMaster();
+
         question1.setQuestionID(1);
         question2.setQuestionID(2);
         question3.setQuestionID(3);
@@ -100,20 +128,6 @@ public class TeamMaster {
                 theQuestion.option4.setMappindID(4);
             }
         }
-    }
-
-
-    public void setHostName(String uname){
-        if (uname.length() > 15 || uname.length() < 3 ){
-           //Toast.makeText(TeamMaster.this, "User Name must be between 3 and 15 characters", Toast.LENGTH_SHORT).show();
-        }
-        else{
-            host = uname;
-        }
-    }
-
-    public void setRoomPin(String pin){
-        roomPin = pin;
     }
 
     public QuestionMaster getQuestion1() {

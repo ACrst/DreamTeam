@@ -2,6 +2,7 @@ package com.example.dreamteam;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -29,7 +30,6 @@ public class PageH3a extends AppCompatActivity {
 
         //Validate Views
         q1Button = (Button) findViewById(R.id.q1Button);
-        /*
         q1 = (EditText) findViewById(R.id.question1);
         opA = (EditText) findViewById(R.id.optA);
         opB = (EditText) findViewById(R.id.optB);
@@ -39,7 +39,6 @@ public class PageH3a extends AppCompatActivity {
         optBSpin =(Spinner)findViewById(R.id.spinnerOptB);
         optCSpin =(Spinner)findViewById(R.id.spinnerOptC);
         optDSpin =(Spinner)findViewById(R.id.spinnerOptD);
-
 
         //Populate Spinners
         PageH1.teamMaster.populateSpinnerArray();
@@ -51,44 +50,49 @@ public class PageH3a extends AppCompatActivity {
         optCSpin.setAdapter(adapter);
         optDSpin.setAdapter(adapter);
 
-        //Extract strings from Views
-        q1String = q1.getText().toString();
-        optionA = opA.getText().toString();
-        optionB = opB.getText().toString();
-        optionC = opC.getText().toString();
-        optionD = opD.getText().toString();
-
-        //Extract the choice form Spinners
-        optAMapID = optASpin.getSelectedItem().toString();
-        optBMapID = optBSpin.getSelectedItem().toString();
-        optCMapID = optCSpin.getSelectedItem().toString();
-        optDMapID = optDSpin.getSelectedItem().toString();
-
-        //Add the spinner mapping IDs into the options.
-        PageH1.teamMaster.findMappedIDOption(optAMapID,PageH1.teamMaster.question1, 1);
-        PageH1.teamMaster.findMappedIDOption(optBMapID,PageH1.teamMaster.question1, 2);
-        PageH1.teamMaster.findMappedIDOption(optCMapID,PageH1.teamMaster.question1, 3);
-        PageH1.teamMaster.findMappedIDOption(optDMapID,PageH1.teamMaster.question1, 4);
-
-
-        //Add the question and options, and mappingIDs into the Question Master Object
-        PageH1.teamMaster.question1.setQuestion(q1String);
-        PageH1.teamMaster.question1.option1.setOptionText(optionA);
-        PageH1.teamMaster.question1.option2.setOptionText(optionB);
-        PageH1.teamMaster.question1.option3.setOptionText(optionC);
-        PageH1.teamMaster.question1.option4.setOptionText(optionD);
-*/
         //Jump to next activity
         q1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(PageH3a.this,"Save button clicked",Toast.LENGTH_SHORT).show();
 
+                //Extract strings from Views
+                q1String = q1.getText().toString();
+                optionA = opA.getText().toString();
+                optionB = opB.getText().toString();
+                optionC = opC.getText().toString();
+                optionD = opD.getText().toString();
+
+                //Extract the choice form Spinners
+                optAMapID = optASpin.getSelectedItem().toString();
+                optBMapID = optBSpin.getSelectedItem().toString();
+                optCMapID = optCSpin.getSelectedItem().toString();
+                optDMapID = optDSpin.getSelectedItem().toString();
+
+                //Add the spinner mapping IDs into the options.
+                PageH1.teamMaster.findMappedIDOption(optAMapID,PageH1.teamMaster.question1, 1);
+                PageH1.teamMaster.findMappedIDOption(optBMapID,PageH1.teamMaster.question1, 2);
+                PageH1.teamMaster.findMappedIDOption(optCMapID,PageH1.teamMaster.question1, 3);
+                PageH1.teamMaster.findMappedIDOption(optDMapID,PageH1.teamMaster.question1, 4);
+
+
+                //Add the question and options, and mappingIDs into the Question Master Object
+                PageH1.teamMaster.question1.setQuestion(q1String);
+                Log.d("CHECKING", PageH1.teamMaster.question1.getQuestion());
+                PageH1.teamMaster.question1.option1.setOptionText(optionA);
+                Log.d("CHECKING", PageH1.teamMaster.question1.option1.getOption());
+                Log.d("CHECKING", String.valueOf(PageH1.teamMaster.question1.option1.getMappingID()));
+                PageH1.teamMaster.question1.option2.setOptionText(optionB);
+                Log.d("CHECKING", PageH1.teamMaster.question1.option2.getOption());
+                Log.d("CHECKING", String.valueOf(PageH1.teamMaster.question1.option2.getMappingID()));
+                PageH1.teamMaster.question1.option3.setOptionText(optionC);
+                Log.d("CHECKING", PageH1.teamMaster.question1.option3.getOption());
+                Log.d("CHECKING", String.valueOf(PageH1.teamMaster.question1.option3.getMappingID()));
+                PageH1.teamMaster.question1.option4.setOptionText(optionD);
+                Log.d("CHECKING", PageH1.teamMaster.question1.option4.getOption());
+                Log.d("CHECKING", String.valueOf(PageH1.teamMaster.question1.option4.getMappingID()));
                 Intent intent = new Intent(PageH3a.this, PageH3b.class);
-                Toast.makeText(PageH3a.this,"...",Toast.LENGTH_SHORT).show();
                 startActivity(intent);
                 finish();
-
             }
         });
 

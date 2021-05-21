@@ -2,6 +2,7 @@ package com.example.dreamteam;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,9 +16,9 @@ import java.util.ArrayList;
 
 public class PageH2 extends AppCompatActivity {
     //Views
-    private Button saveButton;
-    private EditText team1Text, team2Text, team3Text,team4Text;
-    private String team1Name, team2Name, team3Name, team4Name;
+    public Button saveButton;
+    public EditText team1Text, team2Text, team3Text,team4Text;
+    public String team1Name, team2Name, team3Name, team4Name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,33 +27,38 @@ public class PageH2 extends AppCompatActivity {
 
         //Validate views
         saveButton = (Button) findViewById(R.id.button_save);
-        /*team1Text = (EditText) findViewById(R.id.editText_team1);
+        team1Text = (EditText) findViewById(R.id.editText_team1);
         team2Text = (EditText) findViewById(R.id.editText_team2);
         team3Text = (EditText) findViewById(R.id.editText_team3);
         team4Text = (EditText) findViewById(R.id.editText_team4);
 
-        //Extract strings from Views
-        team1Name = team1Text.getText().toString();
-        team2Name = team2Text.getText().toString();
-        team3Name = team3Text.getText().toString();
-        team4Name = team4Text.getText().toString();*/
 
         //Populate Team Master Object on button click
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*
+                //Extract strings from Views
+                team1Name = team1Text.getText().toString();
+                team2Name = team2Text.getText().toString();
+                team3Name = team3Text.getText().toString();
+                team4Name = team4Text.getText().toString();
+
                 //Make sure no fields are left null
                 while (team1Name == null && team1Name == null && team1Name == null && team1Name == null){
                     Toast.makeText(PageH2.this,"Please enter all 4 team names",Toast.LENGTH_SHORT).show();
                 }
-
                 //Add the new team names to the subTeam objects within Team Master
+                Log.d("CHECKING", "writing team names");
                 PageH1.teamMaster.team1.setTeamName(team1Name);
+                Log.d("CHECKING", PageH1.teamMaster.team1.teamName);
                 PageH1.teamMaster.team2.setTeamName(team2Name);
+                Log.d("CHECKING", PageH1.teamMaster.team2.getTeamName());
                 PageH1.teamMaster.team3.setTeamName(team3Name);
+                Log.d("CHECKING", PageH1.teamMaster.team3.getTeamName());
                 PageH1.teamMaster.team4.setTeamName(team4Name);
-*/
+                Log.d("CHECKING", PageH1.teamMaster.team4.getTeamName());
+                Log.d("CHECKING", "done team names");
+
                 Intent intent = new Intent(PageH2.this, PageH3a.class);
                 startActivity(intent);
                 finish();
