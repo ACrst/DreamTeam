@@ -3,8 +3,9 @@
     package="com.example.dreamteam">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -21,80 +22,37 @@
         </activity>
         <activity android:name=".PageH1">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.HOME"/>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
 
         <activity android:name=".PageH2">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.HOME" />
-            </intent-filter>
         </activity>
         <activity android:name=".PageH3a">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.HOME" />
-            </intent-filter>
         </activity>
         <activity android:name=".PageH3b">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.HOME" />
-            </intent-filter>
         </activity>
         <activity android:name=".PageH3c">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.HOME" />
-            </intent-filter>
         </activity>
         <activity android:name=".PageH4">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.HOME" />
-            </intent-filter>
         </activity>
         <activity android:name=".PageH5">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.HOME" />
-            </intent-filter>
         </activity>
         <activity android:name=".PageU1">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.HOME" />
-            </intent-filter>
         </activity>
-        <activity android:name=".PageU2a">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.HOME" />
-            </intent-filter>
+        <activity android:name=".PageU2a"
+            android:parentActivityName=".PageU1">
         </activity>
 
         <activity android:name=".PageU2b"
             android:parentActivityName=".PageU2a">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.HOME" />
-            </intent-filter>
         </activity>
         <activity android:name=".PageU2c"
             android:parentActivityName=".PageU2b">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.HOME" />
-            </intent-filter>
         </activity>
         <activity android:name=".PageU3"
             android:parentActivityName=".PageU2c">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.HOME" />
-            </intent-filter>
         </activity>
     </application>
 
