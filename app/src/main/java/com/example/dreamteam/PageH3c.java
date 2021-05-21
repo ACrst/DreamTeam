@@ -74,7 +74,37 @@ public class PageH3c extends AppCompatActivity {
                 PageH1.teamMaster.question3.option3.setOptionText(optionC);
                 PageH1.teamMaster.question3.option4.setOptionText(optionD);
 
-                //Last but not lease, push the teamMaster into the Database
+                //DUmmy users as example
+                User tom = new User("Tom");
+                tom.setRoompin(PageH1.roompin);
+                tom.question1Map = 1;
+                tom.question2Map = 1;
+                tom.question3Map = 1;
+
+                User tim = new User("Tim");
+                tim.setRoompin(PageH1.roompin);
+                tim.question1Map = 2;
+                tim.question2Map = 2;
+                tim.question3Map = 2;
+
+                User ron = new User("Ron");
+                ron.setRoompin(PageH1.roompin);
+                ron.question1Map = 3;
+                ron.question2Map = 3;
+                ron.question3Map = 3;
+
+                User les = new User("Les");
+                les.setRoompin(PageH1.roompin);
+                les.question1Map = 4;
+                les.question2Map = 4;
+                les.question3Map = 4;
+
+                PageH1.teamMaster.listOfUsers.add(tom);
+                PageH1.teamMaster.listOfUsers.add(tim);
+                PageH1.teamMaster.listOfUsers.add(les);
+                PageH1.teamMaster.listOfUsers.add(ron);
+
+                //Last but not least, push the teamMaster into the Database
                 PageH1.root.child(PageH1.teamMaster.roomPin).setValue(PageH1.teamMaster);
 
                 Intent intent = new Intent(PageH3c.this, PageH4.class);

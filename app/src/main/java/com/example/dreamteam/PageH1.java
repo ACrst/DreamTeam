@@ -26,6 +26,7 @@ import com.google.gson.*;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Random;
+import java.util.SplittableRandom;
 
 public class PageH1 extends AppCompatActivity {
     //Host Page1 to generate RoomPin
@@ -34,6 +35,7 @@ public class PageH1 extends AppCompatActivity {
     private TextView roompin_text_generated;
     public static FirebaseDatabase db=FirebaseDatabase.getInstance();
     public static DatabaseReference root=db.getReference();
+    public static String roompin;
     public static TeamMaster teamMaster;
 
     @Override
@@ -63,7 +65,7 @@ public class PageH1 extends AppCompatActivity {
                     char randomChar=alphabet.charAt(index);
                     sb.append(randomChar);
                 }
-                String roompin=sb.toString();
+                roompin = sb.toString();
                 roompin_text_generated.setText(roompin);
 
                 //Add Hostname to the Team Master Object

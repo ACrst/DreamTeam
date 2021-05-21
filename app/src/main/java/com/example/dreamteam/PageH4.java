@@ -31,16 +31,29 @@ public class PageH4 extends AppCompatActivity {
         //Button Listener
         dreamifyButton = (Button) findViewById(R.id.buttonDreamTeamify);
 
+        //Now poll database and continually update the Host with the users being added in.
+        /*PageH1.root.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                snapshot.child(PageH1.roompin).child("listOfUsers").getValue();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });*/
+
         //Button click listener
         dreamifyButton .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (PageH1.teamMaster.listOfUsers.size() != 0) {
-                    /* This algorithm splits the users into subteams based on each individual user's likelihood Score.
+       /*         if (PageH1.teamMaster.listOfUsers.size() != 0) {
+                    *//* This algorithm splits the users into subteams based on each individual user's likelihood Score.
                      * THe likelihood Score is calculated in the User Class and is a number between 1-4. a perfect whole number like 1,2,3 or 4 means they
                      * are perfectly suited for the teams 1,2,3,4 respectively. A floating point score means they are put in the team they most closely match.
                      * For ex, a score of 1.25 assigns them to team 1.
-                     */
+                     *//*
                     List<User> overFlowUsers = new ArrayList<User>();
 
                     //Ensuring that avgNumMembers is never 0
@@ -121,7 +134,7 @@ public class PageH4 extends AppCompatActivity {
                 else{
                     Toast.makeText(PageH4.this,"No users to split up.",Toast.LENGTH_SHORT).show();
                 }
-
+*/
                 //Jump to new Activity
                 Intent intent = new Intent(PageH4.this, PageH5.class);
                 startActivity(intent);
