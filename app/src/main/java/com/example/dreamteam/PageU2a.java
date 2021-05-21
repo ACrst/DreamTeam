@@ -4,14 +4,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
     //page for logged in User Screen
@@ -22,12 +33,14 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
     private RadioGroup grp;
     Option selectedOption;
 
+
     @Override
     protected void onCreate( @Nullable  Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_u2a);
 
         //Validate Views
+        question1=(TextView)findViewById(R.id.QuestionU1);
         rb1=(RadioButton)findViewById(R.id.rb11);
         rb2=(RadioButton)findViewById(R.id.rb12);
         rb3=(RadioButton)findViewById(R.id.rb13);
@@ -40,6 +53,28 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
         //2) populate question text view
         //3) fetch the option objects from the database.
         //4) populate the option textviews.
+
+        DatabaseReference ref= FirebaseDatabase.getInstance().getReference().child("ASHQNE");//child("ASHQNE");
+
+
+        ref.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String q1text=snapshot.child("question1").child("question").getValue().toString();
+//                        String op1=snapshot.child("question1").child("question").child("option1").child("optionText").getValue().toString();
+//                        String op2=snapshot.child("question1").child("question").child("option2").child("optionText").getValue().toString();
+//                        String op3=snapshot.child("question1").child("question").child("option3").child("optionText").getValue().toString();
+//                        String op4=snapshot.child("question1").child("question").child("option4").child("optionText").getValue().toString();
+
+                        question1.setText(q1text);
+//                        rb1.setText(op1);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
         submitQ1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +94,8 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
 
                     //Now populate User's option objects
 
+
+//
                 Log.d("CHECKING", "b4 the intent");
                     //Jump Activities
                     Intent intentu2a = new Intent(PageU2a.this, PageU2b.class);
