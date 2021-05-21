@@ -51,8 +51,6 @@ public class PageU1 extends AppCompatActivity implements View.OnClickListener {
         switch(v.getId())
         {
             case R.id.buttonJoin:
-
-
                 if(username==null && roomPin!=null)
                 {
                     Toast.makeText(PageU1.this,"Enter your correct username",Toast.LENGTH_SHORT).show();
@@ -75,12 +73,8 @@ public class PageU1 extends AppCompatActivity implements View.OnClickListener {
                     Toast.makeText(PageU1.this,"Join button clicked",Toast.LENGTH_SHORT).show();
                     startActivity(intentu2a);
                     finish();
-
                 }
                 break;
-
-
-
         }
     }
 
