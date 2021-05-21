@@ -55,7 +55,7 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
         //4) populate the option textviews.
 
         DatabaseReference ref= FirebaseDatabase.getInstance().getReference().child("ASHQNE").child("question1");//child("ASHQNE");
-
+        //DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child(PageU1.u_roomPin).child("question1");
 
         ref.addValueEventListener(new ValueEventListener() {
                     @Override
