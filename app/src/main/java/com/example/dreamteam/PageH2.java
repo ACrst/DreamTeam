@@ -48,16 +48,10 @@ public class PageH2 extends AppCompatActivity {
                     Toast.makeText(PageH2.this,"Please enter all 4 team names",Toast.LENGTH_SHORT).show();
                 }
                 //Add the new team names to the subTeam objects within Team Master
-                Log.d("CHECKING", "writing team names");
                 PageH1.teamMaster.team1.setTeamName(team1Name);
-                Log.d("CHECKING", PageH1.teamMaster.team1.teamName);
                 PageH1.teamMaster.team2.setTeamName(team2Name);
-                Log.d("CHECKING", PageH1.teamMaster.team2.getTeamName());
                 PageH1.teamMaster.team3.setTeamName(team3Name);
-                Log.d("CHECKING", PageH1.teamMaster.team3.getTeamName());
                 PageH1.teamMaster.team4.setTeamName(team4Name);
-                Log.d("CHECKING", PageH1.teamMaster.team4.getTeamName());
-                Log.d("CHECKING", "done team names");
 
                 Intent intent = new Intent(PageH2.this, PageH3a.class);
                 startActivity(intent);

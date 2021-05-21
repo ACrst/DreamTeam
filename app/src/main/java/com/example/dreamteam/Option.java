@@ -40,10 +40,7 @@ public class Option {
         if (option == null){
             //Toast.makeText(Option.this, "You must enter a valid string", Toast.LENGTH_SHORT).show();
         }
-        else{
-            Log.d("CHECKING" , "setting opt text");
-            this.optionText = option;
-        }
+        else{ this.optionText = option; }
     }
 
     public void setOptionID(int optID){
