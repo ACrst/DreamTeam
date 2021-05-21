@@ -45,7 +45,6 @@ public class PageH1 extends AppCompatActivity {
 
         hostname=(EditText)findViewById(R.id.usernameTxt);
         generate_roompin_button=(Button)findViewById(R.id.buttonGeneratePin);
-        roompin_text_generated=(TextView)findViewById(R.id.textView_currentroompin);
 
         generate_roompin_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +65,6 @@ public class PageH1 extends AppCompatActivity {
                     sb.append(randomChar);
                 }
                 roompin = sb.toString();
-                roompin_text_generated.setText(roompin);
 
                 //Add Hostname to the Team Master Object
                 String hostUsername = hostname.getText().toString();

@@ -58,34 +58,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.753" />
 
-    <TextView
-        android:id="@+id/textView_currentroompin"
-        android:layout_width="102dp"
-        android:layout_height="34dp"
-        android:fontFamily="@font/dreamteamfonts"
-        android:hint="@string/roompin_title"
-        android:textColor="#FFEB3B"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
-
-    <TextView
-        android:id="@+id/textView_roompin"
-        android:layout_width="102dp"
-        android:layout_height="34dp"
-        android:fontFamily="@font/dreamteamfonts"
-        android:hint="@string/roompin_title"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.582"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.054" />
 
 
 
