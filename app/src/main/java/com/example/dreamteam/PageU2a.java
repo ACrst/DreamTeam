@@ -59,40 +59,40 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
 
 
         ref.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String q1text=snapshot.child("question").getValue().toString();
-                        String op1=snapshot.child("option1").child("option").getValue().toString();
-                        String op2=snapshot.child("option2").child("option").getValue().toString();
-                        String op3=snapshot.child("option3").child("option").getValue().toString();
-                        String op4=snapshot.child("option4").child("option").getValue().toString();
-                        Log.d("Question1",op1.toUpperCase());
-                        question1.setText(q1text);
-                        rb1.setText(op1);
-                        rb2.setText(op2);
-                        rb3.setText(op3);
-                        rb4.setText(op4);
-                        opA=snapshot.child("option1").child("mappingID").getValue().toString();
-                        opB=snapshot.child("option2").child("mappingID").getValue().toString();
-                        opC=snapshot.child("option3").child("mappingID").getValue().toString();
-                        opD=snapshot.child("option4").child("mappingID").getValue().toString();
-                        Log.d("Question1",opA+","+opB+","+opC+","+opD);
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String q1text=snapshot.child("question").getValue().toString();
+                String op1=snapshot.child("option1").child("option").getValue().toString();
+                String op2=snapshot.child("option2").child("option").getValue().toString();
+                String op3=snapshot.child("option3").child("option").getValue().toString();
+                String op4=snapshot.child("option4").child("option").getValue().toString();
+                Log.d("Question1",op1.toUpperCase());
+                question1.setText(q1text);
+                rb1.setText(op1);
+                rb2.setText(op2);
+                rb3.setText(op3);
+                rb4.setText(op4);
+                opA=snapshot.child("option1").child("mappingID").getValue().toString();
+                opB=snapshot.child("option2").child("mappingID").getValue().toString();
+                opC=snapshot.child("option3").child("mappingID").getValue().toString();
+                opD=snapshot.child("option4").child("mappingID").getValue().toString();
+                Log.d("Question1",opA+","+opB+","+opC+","+opD);
 
 
-                    }
+            }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-                    }
-                });
+            }
+        });
 
 
         submitQ1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("CHECKING", "b4 the retrieval");
-                    //Retrieve the option checked by User.
+                //Retrieve the option checked by User.
                 if(grp.getCheckedRadioButtonId()==-1)
                 {
                     //no radio buttons are checked
@@ -100,6 +100,7 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
                 }
                 else
                 {
+
                     if(rb1.isChecked()) {
                         selectedOption.setMappindID(Integer.parseInt(opA));
                     }
@@ -119,15 +120,15 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
 
                 }
 
-                    //Now populate User's option objects
+                //Now populate User's option objects
 
 
-                    PageU1.user.setQuestion1Map(selectedOption.getMappingID());
-                    Log.d("CHECKING", "b4 the intent");
-                    //Jump Activities
-                    Intent intentu2a = new Intent(PageU2a.this, PageU2b.class);
-                    startActivity(intentu2a);
-                    finish();
+                PageU1.user.setQuestion1Map(selectedOption.getMappingID());
+                Log.d("CHECKING", "b4 the intent");
+                //Jump Activities
+                Intent intentu2a = new Intent(PageU2a.this, PageU2b.class);
+                startActivity(intentu2a);
+                finish();
 
             }
         });
