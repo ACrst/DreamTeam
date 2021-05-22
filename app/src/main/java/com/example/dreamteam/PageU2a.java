@@ -55,7 +55,7 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
         //3) fetch the option objects from the database.
         //4) populate the option textviews.
 
-        DatabaseReference ref= FirebaseDatabase.getInstance().getReference().child(PageU1.theUser.getRoompin().toString().toUpperCase()).child("question1");//child("ASHQNE");
+        DatabaseReference ref= FirebaseDatabase.getInstance().getReference().child(PageU1.theUser.getRoompin().toString().toUpperCase()).child("question1");
 
 
         ref.addValueEventListener(new ValueEventListener() {
@@ -93,34 +93,36 @@ public class PageU2a<RadioButtonGroup> extends AppCompatActivity {
             public void onClick(View view) {
                 Log.d("CHECKING", "b4 the retrieval");
                     //Retrieve the option checked by User.
-                if(rb1.isChecked()) {
-                    selectedOption.setMappindID(Integer.parseInt(opA));
-                }
-                else if(rb2.isChecked()) {
-
-                    selectedOption.setMappindID(Integer.parseInt(opB));
-                }
-                else if(rb3.isChecked()) {
-
-                    selectedOption.setMappindID(Integer.parseInt(opC));
-                }
-                else if(rb4.isChecked()) {
-
-                    selectedOption.setMappindID(Integer.parseInt(opD));
-                }
-                Log.d("Question1", String.valueOf(selectedOption.getMappingID()));
                 if(grp.getCheckedRadioButtonId()==-1)
                 {
                     //no radio buttons are checked
                     Toast.makeText(PageU2a.this,"Please select one of the options",Toast.LENGTH_SHORT).show();
                 }
+                else
+                {
+                    if(rb1.isChecked()) {
+                        selectedOption.setMappindID(Integer.parseInt(opA));
+                    }
+                    else if(rb2.isChecked()) {
 
+                        selectedOption.setMappindID(Integer.parseInt(opB));
+                    }
+                    else if(rb3.isChecked()) {
 
+                        selectedOption.setMappindID(Integer.parseInt(opC));
+                    }
+                    else if(rb4.isChecked()) {
+
+                        selectedOption.setMappindID(Integer.parseInt(opD));
+                    }
+                    Log.d("Question1->", String.valueOf(selectedOption.getMappingID()));
+
+                }
 
                     //Now populate User's option objects
 
 
-                    PageU1.theUser.setQuestion1Map(selectedOption.getMappingID());
+                    PageU1.user.setQuestion1Map(selectedOption.getMappingID());
                     Log.d("CHECKING", "b4 the intent");
                     //Jump Activities
                     Intent intentu2a = new Intent(PageU2a.this, PageU2b.class);

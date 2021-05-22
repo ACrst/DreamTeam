@@ -33,6 +33,8 @@ public class PageU2c extends AppCompatActivity {
         setContentView(R.layout.page_u2c);
 
         //Validate Views
+
+        question3=(TextView)findViewById(R.id.QuestionU3);
         rb1=(RadioButton)findViewById(R.id.rb31);
         rb2=(RadioButton)findViewById(R.id.rb32);
         rb3=(RadioButton)findViewById(R.id.rb33);
@@ -53,13 +55,13 @@ public class PageU2c extends AppCompatActivity {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String q1text=snapshot.child("question").getValue().toString();
+                String q3text=snapshot.child("question").getValue().toString();
                 String op1=snapshot.child("option1").child("option").getValue().toString();
                 String op2=snapshot.child("option2").child("option").getValue().toString();
                 String op3=snapshot.child("option3").child("option").getValue().toString();
                 String op4=snapshot.child("option4").child("option").getValue().toString();
                 Log.d("Question1",op1.toUpperCase());
-                question3.setText(q1text);
+                question3.setText(q3text);
                 rb1.setText(op1);
                 rb2.setText(op2);
                 rb3.setText(op3);
@@ -87,9 +89,10 @@ public class PageU2c extends AppCompatActivity {
                     Toast.makeText(PageU2c.this,"Please select one of the options",Toast.LENGTH_SHORT).show();
                 }
 
-                //Add the User to the database.
+                //Finally add the User to the database.
+                PageU1.root.child(PageU1.user.getRoompin()).setValue(PageU1.user);
 
-
+                PageU1.user.setQuestion1Map(selectedOption.getMappingID());
                 //Jump Activities
                 Intent intentu2c = new Intent(PageU2c.this, PageU3.class);
                 startActivity(intentu2c);
